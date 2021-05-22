@@ -1,0 +1,150 @@
+svg.icon {
+   width: 1em; height: 1em;
+   /* width和height定义图标的默认宽度和高度*/
+   vertical-align: -0.15em;
+   fill: currentColor;
+   overflow: hidden;
+}
+
+ /* 阿里图标第二种本地引入方法*/
+@font-face {
+font-family: 'iconfont';
+src: url('/fonts/iconfont.woff2') format('woff2'),
+url('/fonts/iconfont.woff') format('woff'),
+url('/fonts/iconfont.ttf') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-zhuanyejineng:before {
+  content: "\e60f";
+}
+
+.icon-xingquaihao:before {
+  content: "\e60a";
+}
+
+.icon-xunxiang:before {
+  content: "\e604";
+}
+
+.icon-fojing:before {
+  content: "\e653";
+}
+
+.icon-foshou:before {
+  content: "\e654";
+}
+
+.icon-fo:before {
+  content: "\e655";
+}
+
+.icon-lianhuadeng:before {
+  content: "\e657";
+}
+
+.icon-jingpina:before {
+  content: "\e629";
+}
+
+.icon-qita:before {
+  content: "\e625";
+}
+
+.icon-dog:before {
+  content: "\e607";
+}
+
+.icon-youjian:before {
+  content: "\e602";
+}
+
+.icon-bilibili-line:before {
+  content: "\e627";
+}
+
+.icon-youtube:before {
+  content: "\e600";
+}
+
+.icon-tubiaozhizuomoban:before {
+  content: "\e631";
+}
+
+.icon-youxiang:before {
+  content: "\e611";
+}
+
+.icon-artstation:before {
+  content: "\e628";
+}
+
+ /* 夏目友人帐鼠标指针*/
+/* 全局默认鼠标指针 */
+body,
+html{
+  cursor: url('https://cdn.jsdelivr.net/npm/akilar-candyassets/cur/arrow.cur'),auto !important;
+}
+/* 悬停图片时的鼠标指针 */
+img{
+  cursor: url('https://cdn.jsdelivr.net/npm/akilar-candyassets/cur/btn.cur'),auto !important;
+}
+/* 选择链接标签时的鼠标指针 */
+a:hover{
+    cursor: url('https://cdn.jsdelivr.net/npm/akilar-candyassets/cur/link.cur'),auto;
+}
+/* 选中输入框时的鼠标指针 */
+input:hover{
+    cursor: url('https://cdn.jsdelivr.net/npm/akilar-candyassets/cur/input.cur'),auto;
+}
+/* 悬停按钮时的鼠标指针 */
+button:hover{
+    cursor: url('https://cdn.jsdelivr.net/npm/akilar-candyassets/cur/btn.cur'),auto;
+}
+/* 悬停列表标签时的鼠标指针 */
+i:hover{
+    cursor: url('https://cdn.jsdelivr.net/npm/akilar-candyassets/cur/link.cur'),auto;
+}
+/* 悬停页脚链接标签（例如页脚徽标）时的鼠标指针 */
+#footer-wrap a:hover{
+      cursor: url('https://cdn.jsdelivr.net/npm/akilar-candyassets/cur/hf.cur'),auto;
+}
+/* 悬停页码时的鼠标指针 */
+#pagination .page-number:hover{
+      cursor: url('https://cdn.jsdelivr.net/npm/akilar-candyassets/cur/i.cur'),auto;
+}
+/* 悬停菜单栏时的鼠标指针 */
+#nav .site-page:hover{
+      cursor: url('https://cdn.jsdelivr.net/npm/akilar-candyassets/cur/hf.cur'),auto;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 2em;
+    /* background-color: rgba(73, 177, 245, .2); */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(255 255 255 / .3);
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent);
+    border-radius: 2em
+}
+
+::-webkit-scrollbar-corner {
+    background-color: transparent
+}
+
+<style type="text/css">
+  mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:50%;}
