@@ -15,8 +15,66 @@
     <atom:link href="http://ydtrinley.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>o(*￣▽￣*)ブ  Drawing, Reading, Thinking, Playing</description>
-    <pubDate>Wed, 19 May 2021 14:34:23 GMT</pubDate>
+    <pubDate>Sat, 29 May 2021 16:34:23 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Machin3tools使用</title>
+      <link>http://ydtrinley.github.io/2021/05/29/machin3tools%E4%BD%BF%E7%94%A8/</link>
+      <guid>http://ydtrinley.github.io/2021/05/29/machin3tools%E4%BD%BF%E7%94%A8/</guid>
+      <pubDate>Sat, 29 May 2021 15:55:44 GMT</pubDate>
+      
+      <description>Blender插件“Machin3tools使用”学习笔记</description>
+      
+      
+      
+      
+      <category domain="http://YDTRINLEY.github.io/categories/Blender/">Blender</category>
+      
+      <category domain="http://YDTRINLEY.github.io/categories/Blender/Blender%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Blender学习笔记</category>
+      
+      
+      <category domain="http://YDTRINLEY.github.io/tags/Blender/">Blender</category>
+      
+      <category domain="http://YDTRINLEY.github.io/tags/Machin3tools/">Machin3tools</category>
+      
+      
+      <comments>http://ydtrinley.github.io/2021/05/29/machin3tools%E4%BD%BF%E7%94%A8/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>【更新中】《讲故事的艺术》尼尔·盖曼大师课-学习笔记</title>
+      <link>http://ydtrinley.github.io/2021/05/22/Tell-A-Story/</link>
+      <guid>http://ydtrinley.github.io/2021/05/22/Tell-A-Story/</guid>
+      <pubDate>Sat, 22 May 2021 15:55:44 GMT</pubDate>
+      
+        
+        
+      <description>&lt;div class=&quot;tip home&quot;&gt;&lt;ul&gt;
+&lt;li&gt;学习资料来自： &lt;a href=&quot;https://www.bilibili.com/video/BV1jE411J7hk/?p=2&amp;amp;spmidfrom=pageDriver&quot; rel=&quot;external nof</description>
+        
+      
+      
+      
+      
+      <category domain="http://YDTRINLEY.github.io/categories/%E6%96%87%E5%AD%A6/">文学</category>
+      
+      <category domain="http://YDTRINLEY.github.io/categories/%E6%96%87%E5%AD%A6/%E8%AE%B2%E6%95%85%E4%BA%8B%E7%9A%84%E8%89%BA%E6%9C%AF/">讲故事的艺术</category>
+      
+      
+      <category domain="http://YDTRINLEY.github.io/tags/%F0%9F%93%9A%E6%96%87%E5%AD%A6/">📚文学</category>
+      
+      <category domain="http://YDTRINLEY.github.io/tags/%F0%9F%94%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">🔖学习笔记</category>
+      
+      <category domain="http://YDTRINLEY.github.io/tags/%F0%9F%8E%81%E8%AE%B2%E6%95%85%E4%BA%8B%E7%9A%84%E8%89%BA%E6%9C%AF/">🎁讲故事的艺术</category>
+      
+      <category domain="http://YDTRINLEY.github.io/tags/%F0%9F%93%96%E5%B0%8F%E8%AF%B4/">📖小说</category>
+      
+      
+      <comments>http://ydtrinley.github.io/2021/05/22/Tell-A-Story/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Github &amp; Hexo 常用命令cheatsheet</title>

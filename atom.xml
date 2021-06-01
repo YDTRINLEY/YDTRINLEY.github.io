@@ -6,7 +6,7 @@
   <link href="http://ydtrinley.github.io/atom.xml" rel="self"/>
   
   <link href="http://ydtrinley.github.io/"/>
-  <updated>2021-05-19T14:34:23.000Z</updated>
+  <updated>2021-05-29T16:34:23.000Z</updated>
   <id>http://ydtrinley.github.io/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Machin3tools使用</title>
+    <link href="http://ydtrinley.github.io/2021/05/29/machin3tools%E4%BD%BF%E7%94%A8/"/>
+    <id>http://ydtrinley.github.io/2021/05/29/machin3tools%E4%BD%BF%E7%94%A8/</id>
+    <published>2021-05-29T15:55:44.000Z</published>
+    <updated>2021-05-29T16:34:23.000Z</updated>
+    
+    
+    <summary type="html">Blender插件“Machin3tools使用”学习笔记</summary>
+    
+    
+    
+    <category term="Blender" scheme="http://ydtrinley.github.io/categories/Blender/"/>
+    
+    <category term="Blender学习笔记" scheme="http://ydtrinley.github.io/categories/Blender/Blender%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="Blender" scheme="http://ydtrinley.github.io/tags/Blender/"/>
+    
+    <category term="Machin3tools" scheme="http://ydtrinley.github.io/tags/Machin3tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【更新中】《讲故事的艺术》尼尔·盖曼大师课-学习笔记</title>
+    <link href="http://ydtrinley.github.io/2021/05/22/Tell-A-Story/"/>
+    <id>http://ydtrinley.github.io/2021/05/22/Tell-A-Story/</id>
+    <published>2021-05-22T15:55:44.000Z</published>
+    <updated>2021-05-22T14:34:23.000Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;div class=&quot;tip home&quot;&gt;&lt;ul&gt;
+&lt;li&gt;学习资料来自： &lt;a href=&quot;https://www.bilibili.com/video/BV1jE411J7hk/?p=2&amp;amp;spmidfrom=pageDriver&quot; rel=&quot;external nof</summary>
+      
+    
+    
+    
+    <category term="文学" scheme="http://ydtrinley.github.io/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    <category term="讲故事的艺术" scheme="http://ydtrinley.github.io/categories/%E6%96%87%E5%AD%A6/%E8%AE%B2%E6%95%85%E4%BA%8B%E7%9A%84%E8%89%BA%E6%9C%AF/"/>
+    
+    
+    <category term="📚文学" scheme="http://ydtrinley.github.io/tags/%F0%9F%93%9A%E6%96%87%E5%AD%A6/"/>
+    
+    <category term="🔖学习笔记" scheme="http://ydtrinley.github.io/tags/%F0%9F%94%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="🎁讲故事的艺术" scheme="http://ydtrinley.github.io/tags/%F0%9F%8E%81%E8%AE%B2%E6%95%85%E4%BA%8B%E7%9A%84%E8%89%BA%E6%9C%AF/"/>
+    
+    <category term="📖小说" scheme="http://ydtrinley.github.io/tags/%F0%9F%93%96%E5%B0%8F%E8%AF%B4/"/>
+    
+  </entry>
   
   <entry>
     <title>Github &amp; Hexo 常用命令cheatsheet</title>
