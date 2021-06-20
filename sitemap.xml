@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://ydtrinley.github.io/about/index.html</loc>
+    
+    <lastmod>2021-06-20</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://ydtrinley.github.io/bangumis/index.html</loc>
+    
+    <lastmod>2021-06-20</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://ydtrinley.github.io/categories/index.html</loc>
+    
+    <lastmod>2021-06-20</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://ydtrinley.github.io/comments/index.html</loc>
+    
+    <lastmod>2021-06-20</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://ydtrinley.github.io/link/Untitled.html</loc>
+    
+    <lastmod>2021-06-20</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://ydtrinley.github.io/link/index.html</loc>
     
     <lastmod>2021-06-20</lastmod>
@@ -9,7 +44,21 @@
   </url>
   
   <url>
-    <loc>http://ydtrinley.github.io/about/index.html</loc>
+    <loc>http://ydtrinley.github.io/music/index.html</loc>
+    
+    <lastmod>2021-06-20</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://ydtrinley.github.io/soundcloud/index.html</loc>
+    
+    <lastmod>2021-06-20</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://ydtrinley.github.io/tags/index.html</loc>
     
     <lastmod>2021-06-20</lastmod>
     
@@ -37,20 +86,6 @@
   </url>
   
   <url>
-    <loc>http://ydtrinley.github.io/soundcloud/index.html</loc>
-    
-    <lastmod>2021-05-27</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://ydtrinley.github.io/bangumis/index.html</loc>
-    
-    <lastmod>2021-05-27</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://ydtrinley.github.io/posts/Tell-A-Story/</loc>
     
     <lastmod>2021-05-22</lastmod>
@@ -68,41 +103,6 @@
     <loc>http://ydtrinley.github.io/posts/Tag-Plugins-Plus/</loc>
     
     <lastmod>2021-05-19</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://ydtrinley.github.io/link/Untitled.html</loc>
-    
-    <lastmod>2021-05-18</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://ydtrinley.github.io/music/index.html</loc>
-    
-    <lastmod>2021-05-16</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://ydtrinley.github.io/comments/index.html</loc>
-    
-    <lastmod>2021-05-16</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://ydtrinley.github.io/tags/index.html</loc>
-    
-    <lastmod>2021-05-16</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://ydtrinley.github.io/categories/index.html</loc>
-    
-    <lastmod>2021-05-16</lastmod>
     
   </url>
   
@@ -223,14 +223,14 @@
   </url>
   
   <url>
-    <loc>http://ydtrinley.github.io/categories/Blender/Blender%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <loc>http://ydtrinley.github.io/categories/%E4%BD%9B%E5%AD%A6/</loc>
     <lastmod>2021-06-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://ydtrinley.github.io/categories/%E4%BD%9B%E5%AD%A6/</loc>
+    <loc>http://ydtrinley.github.io/categories/Blender/Blender%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2021-06-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
