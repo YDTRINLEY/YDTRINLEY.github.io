@@ -11,4 +11,4 @@ wow = new WOW({
   live: true
   // 在页面上检查新的 wow.js元素。
 })
-wow.init();s
+wow.init();

@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://YDTRINLEY.github.io/2021/05/29/machin3tools%E4%BD%BF%E7%94%A8/</loc>
+    <loc>http://YDTRINLEY.github.io/posts/shanshengjing/</loc>
+    <lastmod>2021-06-19T20:01:59.000Z</lastmod>
+  </url>  <url>
+    <loc>http://YDTRINLEY.github.io/posts/BlenderShaderNode/</loc>
+    <lastmod>2021-06-01T16:34:23.000Z</lastmod>
+  </url>  <url>
+    <loc>http://YDTRINLEY.github.io/posts/machin3tools/</loc>
     <lastmod>2021-05-29T16:34:23.000Z</lastmod>
   </url>  <url>
-    <loc>http://YDTRINLEY.github.io/2021/05/22/Tell-A-Story/</loc>
+    <loc>http://YDTRINLEY.github.io/posts/Tell-A-Story/</loc>
     <lastmod>2021-05-22T14:34:23.000Z</lastmod>
   </url>  <url>
-    <loc>http://YDTRINLEY.github.io/2021/05/19/Hexo-Github-cheatsheet/</loc>
+    <loc>http://YDTRINLEY.github.io/posts/Hexo-Github-cheatsheet/</loc>
     <lastmod>2021-05-19T14:34:23.000Z</lastmod>
   </url>  <url>
-    <loc>http://YDTRINLEY.github.io/2021/05/19/Tag-Plugins-Plus/</loc>
+    <loc>http://YDTRINLEY.github.io/posts/Tag-Plugins-Plus/</loc>
     <lastmod>2021-05-19T14:34:23.000Z</lastmod>
   </url>
 </urlset>
