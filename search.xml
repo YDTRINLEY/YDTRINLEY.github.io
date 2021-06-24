@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>😋实现纳豆（Natto）自由</title>
+      <link href="posts/natto1/"/>
+      <url>posts/natto1/</url>
+      
+        <content type="html"><![CDATA[<h2 id="纳豆君背景"><a class="header-anchor" href="#纳豆君背景">¶</a>纳豆君背景</h2><div class="note blue icon simple"><i class="note-icon fas fa-bullhorn"></i><p>纳豆是日本常见的传统发酵食品，由黄豆通过Bacillus subtilis natto（枯草杆菌亚种之一）借由菌种发酵所释放的酵素转化蒸煮过黄豆的营养成分所制成的豆制品，气味浓烈，有黏性，不仅保有黄豆的营养价值、富含维生素K2、提高蛋白质的消化吸收率，更重要的是发酵过程产生了多种生理活性物质，具有溶解体内纤维蛋白及其他调节生理机能的保健作用。根据藤原明衡所著的新猿乐纪推算，日本人食用纳豆至今已有超过一千年的历史。—— <a href="https://zh.wikipedia.org/wiki/%E7%B4%8D%E8%B1%86" rel="external nofollow noreferrer">wiki</a></p></div><p>纳豆君还有很多兄弟姐妹：主要分为两类“itohiki natto”和“tera natto”；还有“dried natto”</p><div class="note blue icon simple"><i class="note-icon fas fa-bullhorn"></i><p>There are two types of natto; itohiki natto and tera natto. There is also dried natto - which is safe to be shipped abroad because it is freeze-dried. The types of natto can differ their taste and structure.</p><ul><li>Itohiki natto<br>Itohiki natto is the usual natto that we know.Itohiki Natto (stringy natto) can be categorized into 3 types: Marudaizu Natto，Hikiwari Natto， Goto Natto</li><li>Tera Natto (natto made in a temple)<br>Tera Natto is also called Shiokara natto，soybeans fermented with komekoji (mold grown on rice) and salt)which is made by fermenting soybeans with Aspergillus oryzae, and drying it and then letting mature. Natto produced by koji mold was found in ancient Chinese remains uncovered in or around the second century B.C. In Japan there were two types: enshi (later shiokara natto) and tanshi (which vanished into history after the Heian period), and they are believed to be shi (pronounced as “kuki” in Japan and the kanji “久喜” was also used for the word) which is deemed to have been introduced in around the Nara period. They were not used independently but together as seasoning agents.</li><li>Dried Natto<br>Dried natto is natto that immediately freeze-dried. In Kumamoto Prefecture, dried natto is called as “Korumame” and it has been popular since ancient times too.</li></ul><p>—— <a href="https://www.japanese-wiki-corpus.org/culture/Natto%20(fermented%20soybeans).html" rel="external nofollow noreferrer">Natto (fermented soybeans) (納豆)</a></p></div><p>总之，纳豆君营养价值很高，味道鲜美，长期食用有益身体健康，是人类的好朋友，更是很适合素食者的一种营养美食。</p><ul><li>PS 看到有一种说法，中国徐州的“臭豆子/臭盐豆子”和纳豆其实是一样的做法，不过是最后放的调料不一样而已（徐州会最后加入生姜，辣椒，胡椒等，萝卜等调味）。</li></ul><h2 id="纳豆君和我"><a class="header-anchor" href="#纳豆君和我">¶</a>纳豆君和我</h2><p>纳豆君，神奇的物种。它带着雨后大地湿漉漉的泥土气息，再混合上酱油和芥末酱，就是神奇的带着点辛辣的鲜美。只要有一碟子纳豆，我可以吃掉一大碗白米饭。<br>可是市售的纳豆一般都过了生产日期挺长时间（大多将近半年，而保质期是一年），虽然说纳豆完全冷冻是可以保存挺长时间，但快递运送过程总是会让纳豆不同程度的解冻，所以每次买回来总得很快赶着吃，怕它坏掉了。而且一次还要买很多盒，非常“一人食不友好”。<br>还有一次运气特别不好，我甚至买到了运输过程解冻，被污染的纳豆，然后吃坏了肚子，好长一段时间不敢再买纳豆吃。😣<br>所以，自制纳豆还是很有必要的。网上制作纳豆的教程有很多，我参考了一些教程制作了两次，第一次失败，第二次终于成功了。所以，下面只是<strong>制作流程图文视频推荐</strong>参考和自己的<strong>简单制作要点总结</strong>，尽可能避免失败。<br><img src="https://cdn.jsdelivr.net/npm/ydtrinley-assets@1.0.4/natto1-29c5d708.png" src="assets/natto1-29c5d708.png" width="400" height="" > ☝😋WULI成功晋级纳豆的黄豆桑 (๑•̀ㅂ•́)و✧拌起来会有丰富绵密的拉丝喔~当然，为了美观就不拍拌匀的照片了😋</p><h2 id="纳豆君的诞生"><a class="header-anchor" href="#纳豆君的诞生">¶</a>纳豆君的诞生</h2><h3 id="纳豆生产流程"><a class="header-anchor" href="#纳豆生产流程">¶</a>纳豆生产流程</h3><p>推荐两个挺有意思的日本纳豆制作的工业流程短视频：<a href="https://www.bilibili.com/video/BV1ts411y7aA/?spm_id_from=333.788.recommend_more_video.2" rel="external nofollow noreferrer">【日本科学技术】纳豆的制造流程</a>，<a href="https://www.bilibili.com/video/BV1UT4y1771y/?spm_id_from=trigger_reload" rel="external nofollow noreferrer">超珍贵的京纳豆的制作方法</a>。<br>其中比较有意思的是“大豆筛选机”，它可以筛除混在大豆里的杂物垃圾和形状不好的大豆。<img src="https://cdn.jsdelivr.net/npm/ydtrinley-assets@1.0.4/natto1-c6164922.png" src="assets/natto1-c6164922.png" width="400" height="" ><img src="https://cdn.jsdelivr.net/npm/ydtrinley-assets@1.0.4/natto1-c0c92d39.png" src="assets/natto1-c0c92d39.png" width="400" height="" ><img src="https://cdn.jsdelivr.net/npm/ydtrinley-assets@1.0.4/natto1-c099c1d2.png" src="assets/natto1-c099c1d2.png" width="400" height="" ><br>筛选机利用大豆滚动的方式进行筛选，斜面使得外形良好园润的大豆受重力影响沿低边成片滚下，而杂物垃圾和外形不好的大豆（“因为滚不好”）则会被传送带带到高处除去。<br>所以，纳豆君的世界，是颜值不高，不够圆润，“不能好好滚”的黄豆是没资格成为纳豆君的呢😋😋😋</p><h3 id="家庭制作纳豆方法"><a class="header-anchor" href="#家庭制作纳豆方法">¶</a>家庭制作纳豆方法</h3><p>主要推荐<a href="https://www.bilibili.com/video/BV1LE411C7pt?from=search&amp;seid=6883637593762625957" rel="external nofollow noreferrer">【肥丁手工坊】发酵达人自制纳豆</a>这个视频就已经很清楚了。还有一个日本牌子的纳豆制作图文和视频教程<a href="https://thejapanstore.jp/blogs/column/way-of-making-fermented-soybeans" rel="external nofollow noreferrer">“How To Make Homemade Natto”</a>也很好。<br>还有一份更加详细的，包括 PH 湿度、温度等影响条件都考虑进去的纳豆制作参考<a href="https://www.buffalobrewingstl.com/beverage-fermentation/fermentation-and-its-management.html" rel="external nofollow noreferrer">Fermentation and Its Management</a>也非常好。</p><ul><li><strong>PS</strong> 看到很多网站文章写高于43度会杀死纳豆菌的，我想他们可能是误把纳豆菌的繁殖温度理解成纳豆菌的最高耐受温度了。其实高温接种纳豆菌，是可以有效抑制杂菌有害菌污染，让纳豆菌短时间成为优势菌种的一种有效方法，也是工业生产纳豆的一种流程方案。（这里说的是高温接种，而不是高温作为纳豆菌发酵繁殖温度）<br><img src="https://cdn.jsdelivr.net/npm/ydtrinley-assets@1.0.4/natto1-06e27196.png" src="assets/natto1-06e27196.png" width="" height="" ></li></ul><h2 id="我的纳豆制作避雷小贴士"><a class="header-anchor" href="#我的纳豆制作避雷小贴士">¶</a>我的纳豆制作避雷小贴士</h2><ul><li>最好购买黄豆的品种是 <strong>“极小粒”</strong>（这样同样重量的黄豆和纳豆菌有更大相对接触面积）</li><li>黄豆洗干净后，要<strong>充分浸泡</strong>一天（至少10个小时），泡发的黄豆一般大概是原来的两倍大</li><li>把<strong>坏豆挑出来</strong></li><li>黄豆<strong>充分</strong>蒸熟（到手指轻轻一捏就彻底碎了的程度）</li><li><strong>尽量避免混入杂菌污染</strong>：<ul><li>开水烫泡所有工具，进行<strong>消毒</strong></li><li>把蒸熟的豆子舀到发酵容器（这时候一般豆子温度都已经降到70、80度了）就可以马上接种菌种。（纳豆菌耐高温，高温接种纳豆菌可以非常有效避免杂菌有害菌的污染，让纳豆菌短时间内成为优势菌种。不用担心这个温度会杀死它们。）</li><li>有些教程是把菌种化开在煮沸再冷却到80度的水中，但这样对我来说挺麻烦的。我选择把菌种直接均匀撒在豆子上（铺一层豆子，撒一层菌种），并用消毒过的勺子快速搅拌一下，让豆子和菌种尽量均匀混合。（就是把一次用量的菌种分成几次均匀撒）</li><li>接种完，马上放入发酵恒温箱里，设定在发酵菌种的温度</li><li>全程尽量快速地操作，减少有害菌污染</li></ul></li><li>根据买的菌种说明书设置发酵温度和时间（不同菌种略有不同），我的菌种是43℃发酵16小时。</li><li>发酵完的豆子，立刻放入冰箱冷藏一夜。这样第二天吃口感会更好</li></ul><div class="note orange icon flat"><i class="note-icon fas fa-battery-half"></i><p><strong>PS</strong> <a href="https://www.buffalobrewingstl.com/beverage-fermentation/fermentation-and-its-management.html" rel="external nofollow noreferrer">参考文章Fermentation and Its Management</a> 提到的值得注意的一点是，因为纳豆发酵放热，温度会在6-8小时的时候达到最高温度，豆子的发酵温度会达到48℃到50℃，而当纳豆相对湿度过低的时候，会产生硬纳豆。因此，恒温箱的相对湿度要保持在80~85%……<br>(这应该也可以作为理解为什么要充分浸泡和蒸熟豆子的原因了吧，毕竟软糯的纳豆最好吃了，应该不会有人喜欢硬纳豆吧😋)</p></div><p class='p center logo large'>祝大家都能爱上质朴鲜美的纳豆君😋</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 🍱是超好吃的素食啊 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 素食制作 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【更新中】《佛说善生经》笔记</title>
       <link href="posts/shanshengjing/"/>
       <url>posts/shanshengjing/</url>
@@ -13,7 +38,7 @@
       
       <categories>
           
-          <category> 佛学 </category>
+          <category> 🔔佛学 </category>
           
       </categories>
       
@@ -40,7 +65,7 @@
       
       <categories>
           
-          <category> Blender </category>
+          <category> 🎄Blender </category>
           
           <category> Blender学习笔记 </category>
           
@@ -49,7 +74,7 @@
       
         <tags>
             
-            <tag> Blender </tag>
+            <tag> 🎄Blender </tag>
             
             <tag> Blender着色器节点 </tag>
             
@@ -69,7 +94,7 @@
       
       <categories>
           
-          <category> Blender </category>
+          <category> 🎄Blender </category>
           
           <category> Blender学习笔记 </category>
           
@@ -78,9 +103,9 @@
       
         <tags>
             
-            <tag> Blender </tag>
+            <tag> 🎄Blender </tag>
             
-            <tag> Machin3tools </tag>
+            <tag> Blender插件 </tag>
             
             <tag> 辣椒酱 </tag>
             
@@ -133,7 +158,7 @@
       
       <categories>
           
-          <category> Hexo </category>
+          <category> 😀Hexo </category>
           
       </categories>
       
@@ -162,9 +187,9 @@
       
       <categories>
           
-          <category> Hexo </category>
+          <category> 😀Hexo </category>
           
-          <category> Butterfly </category>
+          <category> 🦋Butterfly </category>
           
       </categories>
       
