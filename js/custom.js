@@ -75,3 +75,16 @@ if (mobile_sidebar_menus) {
         menus_item_child[i].style.display = "none";
     }
 }
+
+/* JISQUSJS去广告功能，可是没用 https://www.wpchen.net/zh/posts/disqus#%E5%9B%9B%E3%80%81%E7%A7%BB%E9%99%A4%E5%BB%A3%E5%91%8A */
+
+(function($){
+    setInterval(() => {
+        $.each($('iframe'), (arr,x) => {
+            let src = $(x).attr('src');
+            if (src && src.match(/(ads-iframe)|(disqusads)/gi)) {
+                $(x).remove();
+            }
+        });
+    }, 300);
+})
