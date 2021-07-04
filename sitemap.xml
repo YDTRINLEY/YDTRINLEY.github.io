@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://ydtrinley.github.io/tags/index.html</loc>
+    <loc>http://ydtrinley.github.io/posts/natto1/</loc>
     
     <lastmod>2021-07-04</lastmod>
     
   </url>
   
   <url>
-    <loc>http://ydtrinley.github.io/posts/natto1/</loc>
+    <loc>http://ydtrinley.github.io/posts/vrResourses/</loc>
     
     <lastmod>2021-07-04</lastmod>
     
@@ -66,6 +66,13 @@
   
   <url>
     <loc>http://ydtrinley.github.io/soundcloud/index.html</loc>
+    
+    <lastmod>2021-07-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://ydtrinley.github.io/tags/index.html</loc>
     
     <lastmod>2021-07-04</lastmod>
     
@@ -179,6 +186,13 @@
   </url>
   
   <url>
+    <loc>http://ydtrinley.github.io/tags/%E8%B5%84%E6%BA%90%E8%B4%B4/</loc>
+    <lastmod>2021-07-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://ydtrinley.github.io/tags/%F0%9F%93%9A%E6%96%87%E5%AD%A6/</loc>
     <lastmod>2021-07-04</lastmod>
     <changefreq>daily</changefreq>
@@ -252,6 +266,13 @@
   
   <url>
     <loc>http://ydtrinley.github.io/categories/%F0%9F%8E%84Blender/Blender%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2021-07-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://ydtrinley.github.io/categories/%E2%9C%A8%E8%89%BA%E6%9C%AF/</loc>
     <lastmod>2021-07-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

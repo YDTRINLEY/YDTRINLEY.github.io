@@ -2,6 +2,11 @@ const ap = new APlayer({
     container: document.getElementById('aplayer'),
     fixed: true,
     autoplay: true,
+    loop: 'all',
+    order: 'random',
+    preload: 'auto',
+    volume: 0.7,
+    mutex: true,
     audio: [{
         name: 'dream scape',
         artist: 'FictionJunction',
