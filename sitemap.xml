@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://ydtrinley.github.io/posts/natto1/</loc>
-    
-    <lastmod>2021-07-05</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://ydtrinley.github.io/posts/vrResourses/</loc>
     
     <lastmod>2021-07-05</lastmod>
@@ -30,14 +23,14 @@
   </url>
   
   <url>
-    <loc>http://ydtrinley.github.io/comments/index.html</loc>
+    <loc>http://ydtrinley.github.io/categories/index.html</loc>
     
     <lastmod>2021-07-05</lastmod>
     
   </url>
   
   <url>
-    <loc>http://ydtrinley.github.io/categories/index.html</loc>
+    <loc>http://ydtrinley.github.io/comments/index.html</loc>
     
     <lastmod>2021-07-05</lastmod>
     
@@ -72,6 +65,13 @@
   </url>
   
   <url>
+    <loc>http://ydtrinley.github.io/soundcloud/index.html</loc>
+    
+    <lastmod>2021-07-05</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://ydtrinley.github.io/tags/index.html</loc>
     
     <lastmod>2021-07-05</lastmod>
@@ -79,7 +79,7 @@
   </url>
   
   <url>
-    <loc>http://ydtrinley.github.io/soundcloud/index.html</loc>
+    <loc>http://ydtrinley.github.io/posts/natto1/</loc>
     
     <lastmod>2021-07-05</lastmod>
     
