@@ -15,8 +15,33 @@
     <atom:link href="http://ydtrinley.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>o(*￣▽￣*)ブ  Drawing, Reading, Thinking, Playing</description>
-    <pubDate>Thu, 08 Jul 2021 16:57:30 GMT</pubDate>
+    <pubDate>Sun, 11 Jul 2021 16:34:23 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>【Blender】CGI（Computer-generated imagery）基础原理、拓扑布线原理-学习笔记</title>
+      <link>http://ydtrinley.github.io/posts/CGI%EF%BC%88Computer-generated%20imagery%EF%BC%89note/</link>
+      <guid>http://ydtrinley.github.io/posts/CGI%EF%BC%88Computer-generated%20imagery%EF%BC%89note/</guid>
+      <pubDate>Sun, 11 Jul 2021 15:55:44 GMT</pubDate>
+      
+      <description>BlenderCGI（Computer-generated imagery）基础原理、拓扑布线原理</description>
+      
+      
+      
+      
+      <category domain="http://YDTRINLEY.github.io/categories/%F0%9F%8E%84Blender/">🎄Blender</category>
+      
+      <category domain="http://YDTRINLEY.github.io/categories/%F0%9F%8E%84Blender/Blender%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Blender学习笔记</category>
+      
+      
+      <category domain="http://YDTRINLEY.github.io/tags/%F0%9F%8E%84Blender/">🎄Blender</category>
+      
+      <category domain="http://YDTRINLEY.github.io/tags/Blender%E5%9F%BA%E7%A1%80%E5%8E%9F%E7%90%86/">Blender基础原理</category>
+      
+      
+      <comments>http://ydtrinley.github.io/posts/CGI%EF%BC%88Computer-generated%20imagery%EF%BC%89note/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>【更新中】VR漫游名胜古迹虚拟博物馆 &amp; 3D藏品 （VR Tour &amp; 3D Collections）</title>

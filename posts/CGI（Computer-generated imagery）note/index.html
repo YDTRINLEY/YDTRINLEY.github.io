@@ -1,0 +1,623 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>【Blender】CGI（Computer-generated imagery）基础原理、拓扑布线原理-学习笔记 | 幻世·游戏人间·N次元</title><meta name="keywords" content="🎄Blender,Blender基础原理"><meta name="author" content="YD•N次元药师"><meta name="copyright" content="YD•N次元药师"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="BlenderCGI（Computer-generated imagery）基础原理、拓扑布线原理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Blender】CGI（Computer-generated imagery）基础原理、拓扑布线原理-学习笔记">
+<meta property="og:url" content="http://ydtrinley.github.io/posts/CGI%EF%BC%88Computer-generated%20imagery%EF%BC%89note/index.html">
+<meta property="og:site_name" content="幻世·游戏人间·N次元">
+<meta property="og:description" content="BlenderCGI（Computer-generated imagery）基础原理、拓扑布线原理">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626011597788-008de6c7-ee49-4b29-b272-fac014da8dff.png?x-oss-process=image%2Fresize%2Cw_435">
+<meta property="article:published_time" content="2021-07-11T15:55:44.000Z">
+<meta property="article:modified_time" content="2021-07-11T16:34:23.000Z">
+<meta property="article:author" content="YD•N次元药师">
+<meta property="article:tag" content="🎄Blender">
+<meta property="article:tag" content="Blender基础原理">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626011597788-008de6c7-ee49-4b29-b272-fac014da8dff.png?x-oss-process=image%2Fresize%2Cw_435"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/YDTRINLEY/YDTRINLEY.github.io/img/favicon.png"><link rel="canonical" href="http://ydtrinley.github.io/posts/CGI%EF%BC%88Computer-generated%20imagery%EF%BC%89note/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google_site_verification" content="_dpnC9qCi_mjwyNScWMpMDP_C6qRRhcqCH5fK6CBsz0"/><meta name="baidu_site_verification" content="9e6b3bb300f7354efd637beacedaaeb5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: YD•N次元药师","link":"链接: ","source":"来源: 幻世·游戏人间·N次元","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '【Blender】CGI（Computer-generated imagery）基础原理、拓扑布线原理-学习笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2021-07-11 16:34:23'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    })(window)</script><link rel="stylesheet" href="/css/background.css"><link rel="stylesheet" href="/css/custom.css"><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css"  media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="defer" onload="this.media='all'"><link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css"><script defer src="https://cdn.jsdelivr.net/gh/graingert/wow@1.3.0/dist/wow.min.js"></script><script defer data-pjax src="/js/wow_init.js"></script><script src="https://embed.widgetpack.com/widget.js"></script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="幻世·游戏人间·N次元" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="幻世·游戏人间·N次元" type="application/rss+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/YDTRINLEY/YDTRINLEY.github.io/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-book faa-float animated"></i><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/bb/"><i class="fa-fw fas fa-comments"></i><span> 唠嗑儿</span></a></div><div class="menus_item"><a class="site-page" href="/soundcloud/"><i class="fa-fw fas fa-podcast"></i><span> N次元播客</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list faa-float animated"></i><span> FUN</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/books/"><i class="fa-fw fas fa-book faa-float animated"></i><span> 书单</span></a></li><li><a class="site-page child" href="/games/"><i class="fa-fw fas fa-gamepad faa-float animated"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video faa-float animated"></i><span> 电影</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="fa-fw fas fa-photo-video faa-float animated"></i><span> 番剧</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comments faa-float animated"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list fa fa-puzzle-piece"></i><span> 友人帐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/fcircle/"><i class="fa-fw fa fa-puzzle-piece"></i><span> 友人近况</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link faa-float animated"></i><span> 友链</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart card-announcement-animation faa-float animated"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.nlark.com/yuque/0/2021/png/12518217/1626011597788-008de6c7-ee49-4b29-b272-fac014da8dff.png?x-oss-process=image%2Fresize%2Cw_435')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">幻世·游戏人间·N次元</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-book faa-float animated"></i><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/bb/"><i class="fa-fw fas fa-comments"></i><span> 唠嗑儿</span></a></div><div class="menus_item"><a class="site-page" href="/soundcloud/"><i class="fa-fw fas fa-podcast"></i><span> N次元播客</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list faa-float animated"></i><span> FUN</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/books/"><i class="fa-fw fas fa-book faa-float animated"></i><span> 书单</span></a></li><li><a class="site-page child" href="/games/"><i class="fa-fw fas fa-gamepad faa-float animated"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video faa-float animated"></i><span> 电影</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="fa-fw fas fa-photo-video faa-float animated"></i><span> 番剧</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comments faa-float animated"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list fa fa-puzzle-piece"></i><span> 友人帐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/fcircle/"><i class="fa-fw fa fa-puzzle-piece"></i><span> 友人近况</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link faa-float animated"></i><span> 友链</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart card-announcement-animation faa-float animated"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">【Blender】CGI（Computer-generated imagery）基础原理、拓扑布线原理-学习笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-07-11T15:55:44.000Z" title="发表于 2021-07-11 15:55:44">2021-07-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-07-11T16:34:23.000Z" title="更新于 2021-07-11 16:34:23">2021-07-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%F0%9F%8E%84Blender/">🎄Blender</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%F0%9F%8E%84Blender/Blender%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Blender学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="【Blender】CGI（Computer-generated imagery）基础原理、拓扑布线原理-学习笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><div class="tip cogs"><ul>
+<li>教程源自视频：<a target="_blank" href="https://www.bilibili.com/video/BV1N54y1L78W?p=1&amp;share_medium=android&amp;share_plat=android&amp;share_source=WEIXIN&amp;share_tag=s_i&amp;timestamp=1625966337&amp;unique_k=EAauQR" rel="external nofollow noreferrer noopener">【Blender开源字幕组】CGI基础原理（学习3D之前先学习一下原理吧）</a></li>
+<li>原英文原网址 <a target="_blank" href="https://guerrillacg.com/home.html" rel="external nofollow noreferrer noopener">guerrillacg</a></li>
+<li>同步到语雀 <a target="_blank" href="https://www.yuque.com/cfczyuandaotrinleychdron/evmrn5/als9qn" rel="external nofollow noreferrer noopener">CGI（Computer-generated imagery）基础原理 笔记</a></li>
+</ul>
+</div>
+<hr>
+<h1 id="P1-几何体属性-多边形是什么"><a class="header-anchor" href="#P1-几何体属性-多边形是什么">¶</a>P1 几何体属性/多边形是什么</h1>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">了解三角形以及它是如何创建复杂三维模型的</span><br></pre></td></tr></table></figure>
+<ul>
+<li>三角形永远是平面flat</li>
+<li>法线/normal：多边形都具有一个法线，也就是面朝向，电脑可以通过法向来计算多边形着色
+<ul>
+<li>法线可以是单面或者双面的，如果是单面的，则无法从背面看到多边形</li>
+</ul>
+</li>
+<li>因为多边形没有厚度，所以无法从侧面看到多边形</li>
+</ul>
+<hr>
+<h1 id="P2-大于3条边的多边形-Multi-Sided-and-Intersecting-Polygons"><a class="header-anchor" href="#P2-大于3条边的多边形-Multi-Sided-and-Intersecting-Polygons">¶</a>P2 大于3条边的多边形 <a target="_blank" href="https://guerrillacg.com/home/3d-polygon-modeling/multi-sided-polygons.html" rel="external nofollow noreferrer noopener">Multi Sided and Intersecting Polygons</a></h1>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">了解多边形并不具备真实物体的物理属性；</span><br><span class="line">并了解这一特性如何帮我们建立某些模型</span><br></pre></td></tr></table></figure>
+<ul>
+<li>tri是三角形；quad是四边形； n-gon 大于4边以上的多边形</li>
+<li>non-planar非平面：下拉圆面的一个点，就会变成非平面</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625995977345-23e82df5-1766-44a3-9e63-5bee960f6cc5.png#clientId=ud7a02ddf-68cd-4&from=paste&height=143&id=u65f0edea&margin=%5Bobject%20Object%5D&name=image.png" style="height:130px;"/> <img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625996005790-5628ea6d-0366-44ff-90f4-ae9b9cf56cf4.png" style="height:130px;"/> <img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625995991329-a67f1728-d9e5-4164-aebd-1d07aa7a2b44.png" style="height:130px;"/>
+<ul>
+<li>手动在非平面多边形上切一条边，避免电脑随机分割多边形</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625996203327-515097cd-d8db-4d4c-9ee0-f06152a31443.png#clientId=ud7a02ddf-68cd-4&from=paste&height=130&id=u561a8c54&margin=%5Bobject%20Object%5D&name=image.png&originHeight=356&originWidth=862&originalType=binary&ratio=1&size=361763&status=done&style=none&taskId=u046ac1d5-63e2-4cb0-965f-bb4bd1cb8a7&width=314.9942932128906" style="height:130px;"/><img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625996206324-7008b36a-48e0-4840-85b8-58a92f9c1e84.png#clientId=ud7a02ddf-68cd-4&from=paste&height=131&id=ua1d9f994&margin=%5Bobject%20Object%5D&name=image.png&originHeight=328&originWidth=879&originalType=binary&ratio=1&size=191497&status=done&style=none&taskId=uabb23020-83e0-4ed4-98ee-2f6d55649e0&width=351.4886169433594" style="height:130px;"/>
+<h3 id="Why-use-quads？"><a class="header-anchor" href="#Why-use-quads？">¶</a>Why use quads？</h3>
+<ul>
+<li>四边形也可以变成 non-planar</li>
+<li>细分通常需要四边形才可以正常使用</li>
+</ul>
+<h3 id="Computer-Games-and-Triangles"><a class="header-anchor" href="#Computer-Games-and-Triangles">¶</a>Computer Games and Triangles</h3>
+<ul>
+<li>因为性能限制，所以游戏通常用三角形网格、</li>
+<li>需要告诉电脑如何划分网格，否则会出现折痕等，此时可以通过调整网格布线解决，比如：</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625996514874-9f5cb073-6608-4d97-96b4-7e10b8b16b00.png#clientId=ud7a02ddf-68cd-4&from=paste&height=138&id=u6602fb8a&margin=%5Bobject%20Object%5D&name=image.png&originHeight=476&originWidth=535&originalType=binary&ratio=1&size=413112&status=done&style=none&taskId=u0d349bae-c228-4c34-aee3-712e3ce381a&width=155.4971466064453" style="height:130px;"/><img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625996517885-c7ab9a04-6799-4c98-8f64-2387e78f12ea.png#clientId=ud7a02ddf-68cd-4&from=paste&height=138&id=ue421ee2e&margin=%5Bobject%20Object%5D&name=image.png&originHeight=481&originWidth=650&originalType=binary&ratio=1&size=391843&status=done&style=none&taskId=uceb2dfa9-7bfa-453b-a78b-ad6a4d6bc82&width=186.97726440429688" style="height:130px;"/><img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625996544243-6e298ac9-7fb4-46fc-8195-933d857a80c8.png#clientId=ud7a02ddf-68cd-4&from=paste&height=136&id=u3d7be3ab&margin=%5Bobject%20Object%5D&name=image.png&originHeight=438&originWidth=568&originalType=binary&ratio=1&size=396503&status=done&style=none&taskId=uc47eecf9-f17e-4a3c-8fa6-5d03fa70595&width=175.98863220214844" style="height:130px;"/><img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625996546317-eec62979-9f63-42a6-b5d2-d6bdd5fcbf44.png#clientId=ud7a02ddf-68cd-4&from=paste&height=137&id=ucdcf9d6b&margin=%5Bobject%20Object%5D&name=image.png&originHeight=370&originWidth=550&originalType=binary&ratio=1&size=350226&status=done&style=none&taskId=uafcadf8d-01ac-4223-b04e-e0f2a0e6f9c&width=203" style="height:130px;"/>
+<h3 id="Intersecting-Polygons-相交多边形"><a class="header-anchor" href="#Intersecting-Polygons-相交多边形">¶</a>Intersecting Polygons 相交多边形</h3>
+<ul>
+<li>因为多边形没有物理属性，所以它们可以相交甚至相互穿过。(我们可以利用这一属性建模，类似布尔）</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625996737178-b5475d81-23d3-4643-8fdf-474719080d8d.png#clientId=ud7a02ddf-68cd-4&from=paste&height=166&id=u078eaf01&margin=%5Bobject%20Object%5D&name=image.png&originHeight=522&originWidth=617&originalType=binary&ratio=1&size=370945&status=done&style=none&taskId=ua8382767-00ef-4dbe-8961-a9da68a0110&width=196.48863220214844" style="height:130px;"/><img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625996779708-abde1a92-4d06-4f27-9731-51e6b5f39f61.png#clientId=ud7a02ddf-68cd-4&from=paste&height=164&id=u919cc8e4&margin=%5Bobject%20Object%5D&name=image.png&originHeight=430&originWidth=916&originalType=binary&ratio=1&size=363778&status=done&style=none&taskId=u201476a6-96f3-428b-a5e8-fe908ef8446&width=348.9801025390625" style="height:130px;"/>
+<hr>
+<h1 id="P3-物体-Object"><a class="header-anchor" href="#P3-物体-Object">¶</a>P3 物体 Object</h1>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">了解物体属性，包括pivot <span class="keyword">point</span>枢轴点（轴心、原点）</span><br><span class="line">demo演示任意多边形是如何组成物体的</span><br><span class="line">多个对象objects是如何构成复杂模型的</span><br></pre></td></tr></table></figure>
+<ul>
+<li>物体：指一组共享变换旋转缩放等信息的多边形集合</li>
+<li>物体属性：pivot point, rotation, translation, scale
+<ul>
+<li>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625997356799-f90c6e68-97e0-4c85-a45f-e197f2819920.png#clientId=ud7a02ddf-68cd-4&from=paste&height=209&id=u195ee4e7&margin=%5Bobject%20Object%5D&name=image.png&originHeight=491&originWidth=514&originalType=binary&ratio=1&size=170875&status=done&style=none&taskId=ub7e81a7c-58a5-479b-bffb-da58de2df9f&width=218.97442626953125" style="height:130px;"/> 缩放2，表示放大200%
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Objects-can-be-any-combination-of-polygons"><a class="header-anchor" href="#Objects-can-be-any-combination-of-polygons">¶</a>Objects can be any combination of polygons</h3>
+<ul>
+<li>注意：多边形并没有相连接</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625997604217-45f9327f-8e49-4c19-b03c-7d41b9eb9a5a.png#clientId=ud7a02ddf-68cd-4&from=paste&height=184&id=u73d4340e&margin=%5Bobject%20Object%5D&name=image.png&originHeight=501&originWidth=699&originalType=binary&ratio=1&size=190895&status=done&style=none&taskId=u6d336104-1f35-4469-8959-4d1335a5497&width=256.4886169433594" style="height:130px;"/><img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625997584170-0d5613c6-18af-4ec5-9736-b3fb2ffbecd5.png#clientId=ud7a02ddf-68cd-4&from=paste&height=184&id=u0091a13d&margin=%5Bobject%20Object%5D&name=image.png&originHeight=489&originWidth=741&originalType=binary&ratio=1&size=221517&status=done&style=none&taskId=u17ce64df-f5e0-4acf-ba63-1ae6ba6bf4d&width=279.4829406738281" style="height:130px;"/>
+<h3 id="Many-objects-can-form-an-object-or-model"><a class="header-anchor" href="#Many-objects-can-form-an-object-or-model">¶</a>Many objects can form an object or model</h3>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625997739946-e56c53df-28ca-45fe-a9f5-b965882bd914.png#clientId=ud7a02ddf-68cd-4&from=paste&height=175&id=ua92228df&margin=%5Bobject%20Object%5D&name=image.png&originHeight=486&originWidth=733&originalType=binary&ratio=1&size=300157&status=done&style=none&taskId=u81fb9123-26a9-47b6-bd52-62bce0e1d6c&width=263.491455078125" style="height:130px;"/><img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625997743634-355108ae-fe92-4191-8b15-f2a1db8af164.png#clientId=ud7a02ddf-68cd-4&from=paste&height=177&id=ud2910b76&margin=%5Bobject%20Object%5D&name=image.png&originHeight=493&originWidth=707&originalType=binary&ratio=1&size=483620&status=done&style=none&taskId=u4070954a-634f-4bc7-9548-64221d0e6d2&width=254.49429321289062" style="height:130px;"/>
+<hr>
+<h1 id="P4-平滑着色Smooth-Shading"><a class="header-anchor" href="#P4-平滑着色Smooth-Shading">¶</a>P4 平滑着色Smooth Shading</h1>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">了解“平滑着色”是如何柔化多边形上的折痕的</span><br><span class="line">了解到顶点法线如何影响多边形面的gradiant的。how vertex normals affect the gradient of a polygons face.</span><br><span class="line">如何在特定的边或角度上使用平滑着色。We also look at how <span class="keyword">to</span> quickly smooth shade objects with a wide variety of angles by setting angle tolerances.</span><br></pre></td></tr></table></figure>
+<h3 id="Smooth-And-Hard-Edges"><a class="header-anchor" href="#Smooth-And-Hard-Edges">¶</a>Smooth And Hard Edges</h3>
+<ul>
+<li>平直着色 <img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625998261936-094a1293-6d92-47fa-aa3e-4b45ccd341be.png#clientId=ud7a02ddf-68cd-4&from=paste&height=183&id=ua17f3166&margin=%5Bobject%20Object%5D&name=image.png&originHeight=425&originWidth=562&originalType=binary&ratio=1&size=197020&status=done&style=none&taskId=ua6197e10-2a15-444b-bd33-77b705b01a1&width=241.99429321289062" style="height:130px;"/> =》 平滑着色 <img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625998300674-70a21f2b-c1de-4f2d-a5da-5ed4ebd704a8.png#clientId=ud7a02ddf-68cd-4&from=paste&height=187&id=u0b89b1da&margin=%5Bobject%20Object%5D&name=image.png&originHeight=433&originWidth=577&originalType=binary&ratio=1&size=285408&status=done&style=none&taskId=u684ad25c-f57c-40fe-962c-32db07f7ff3&width=249.49429321289062" style="height:130px;"/></li>
+<li>可通过“标记为锐边”选择平滑着色的区域</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625998390855-cf4cb5de-863e-4a40-b344-d960d7e74a46.png#clientId=ud7a02ddf-68cd-4&from=paste&height=174&id=u8098d23b&margin=%5Bobject%20Object%5D&name=image.png&originHeight=424&originWidth=492&originalType=binary&ratio=1&size=256013&status=done&style=none&taskId=uf9162b03-380a-4a9d-a0e8-cb29363a64e&width=201.9857940673828" style="height:130px;"/> =》 <img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625998393537-6c49cf76-1180-47cd-b8fb-266188ad98cd.png#clientId=ud7a02ddf-68cd-4&from=paste&height=172&id=u4c0ceb20&margin=%5Bobject%20Object%5D&name=image.png&originHeight=412&originWidth=531&originalType=binary&ratio=1&size=231408&status=done&style=none&taskId=uca4b1bfc-692b-4e42-9b8e-98b74cfce15&width=221.49716186523438" style="height:130px;"/>
+<ul>
+<li>平滑着色能让我们即使用较少的线段也能产生光滑表面的错觉，带来更轻量的网格和渲染速度</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625998461689-27f6956a-c81a-4e52-9da0-09163d73d9d0.png#clientId=ud7a02ddf-68cd-4&from=paste&height=199&id=u1a4019d7&margin=%5Bobject%20Object%5D&name=image.png&originHeight=484&originWidth=758&originalType=binary&ratio=1&size=321924&status=done&style=none&taskId=uaced573d-6b78-4eae-af43-f075e907592&width=311.991455078125" style="height:130px;"/>
+<h3 id="顶点法线-Vertex-Normals"><a class="header-anchor" href="#顶点法线-Vertex-Normals">¶</a>顶点法线 Vertex Normals</h3>
+<ul>
+<li>多边形拥有面法线和顶点法线，当一个位置有多个多边形顶点时，不同法线间的夹角呈现不同的折痕程度，平滑着色会统一法向，使表面呈现平滑状态。</li>
+<li>面法线指向多边形面所面对的方向</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625998614522-04fafe40-f9f3-4834-9d86-fadabdc83a60.png#clientId=ud7a02ddf-68cd-4&from=paste&height=183&id=u8c62c1d0&margin=%5Bobject%20Object%5D&name=image.png&originHeight=435&originWidth=662&originalType=binary&ratio=1&size=167171&status=done&style=none&taskId=ue61e02ed-a862-47bb-a86b-4f97be88968&width=278.9942932128906" style="height:130px;"/><img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625998635448-41632f0e-33b6-4cbc-ba31-c8af9023a37d.png#clientId=ud7a02ddf-68cd-4&from=paste&height=183&id=u8a517cb9&margin=%5Bobject%20Object%5D&name=image.png&originHeight=443&originWidth=656&originalType=binary&ratio=1&size=187087&status=done&style=none&taskId=u0c8a2aba-cf1c-4d89-9751-cba46fadd77&width=270.98577880859375" style="height:130px;"/>
+<ul>
+<li>顶点法线，则是改变多边形上的渐变着色 grandient shading of the polygon；如果改变顶点法线的方向，则该顶点周围的着色将发生变化，从而在表面产生渐变；电脑实际上是在伪造faking 多边形上的渐变</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625998864931-76eff2a4-52d7-4db1-a40c-b0eca6124902.png#clientId=ud7a02ddf-68cd-4&from=paste&height=204&id=ucb430723&margin=%5Bobject%20Object%5D&name=image.png&originHeight=408&originWidth=586&originalType=binary&ratio=1&size=183142&status=done&style=none&taskId=ua3707c00-5c3e-479b-84fd-6952a79c8d9&width=293" style="height:130px;"/> =》 <img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625998873042-529dcda6-8c5d-4414-9fac-fbac08e98a7b.png#clientId=ud7a02ddf-68cd-4&from=paste&height=204&id=u72bc6f17&margin=%5Bobject%20Object%5D&name=image.png&originHeight=408&originWidth=633&originalType=binary&ratio=1&size=212583&status=done&style=none&taskId=u52dc983a-76ee-4e7a-9540-10849ad2ca2&width=316.5" style="height:130px;"/><br /><img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625998880122-5409cffd-23ec-4d08-9e8b-00b473d05f19.png#clientId=ud7a02ddf-68cd-4&from=paste&height=182&id=u4e54062f&margin=%5Bobject%20Object%5D&name=image.png&originHeight=469&originWidth=792&originalType=binary&ratio=1&size=259902&status=done&style=none&taskId=u647a68b1-0287-408f-ac5a-48afa941f53&width=307.9942932128906" style="height:130px;"/> =》<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625998887161-75dbfd62-3795-424e-a374-84db58540ecd.png#clientId=ud7a02ddf-68cd-4&from=paste&height=189&id=u9c917eb0&margin=%5Bobject%20Object%5D&name=image.png&originHeight=468&originWidth=762&originalType=binary&ratio=1&size=277428&status=done&style=none&taskId=u10478b4c-f197-4fd4-8909-6027d377c63&width=306.9942932128906" style="height:130px;"/>
+<ul>
+<li>当折线边的顶点法线重合，多边形的折线边的着色变得完全相同，此时这条折线就变得不可见了</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625999087002-98614b6d-f8af-4a2c-80cd-ea67972af1b3.png#clientId=ud7a02ddf-68cd-4&from=paste&height=182&id=u70883bcf&margin=%5Bobject%20Object%5D&name=image.png&originHeight=483&originWidth=588&originalType=binary&ratio=1&size=189489&status=done&style=none&taskId=ua2a57546-39ee-4d5a-927f-5a922c63b7c&width=220.991455078125" style="height:130px;"/><img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625999093483-8b29fd6a-6a2a-4566-b111-c1275ca30e7b.png#clientId=ud7a02ddf-68cd-4&from=paste&height=180&id=u9afc62e9&margin=%5Bobject%20Object%5D&name=image.png&originHeight=477&originWidth=699&originalType=binary&ratio=1&size=260430&status=done&style=none&taskId=u101b8cd7-22bd-4c0d-ab6b-29181993790&width=263.4886169433594" style="height:130px;"/><img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625999096919-399953f4-4b68-4bf6-9d13-02f390caf99e.png#clientId=ud7a02ddf-68cd-4&from=paste&height=185&id=ubd6ec182&margin=%5Bobject%20Object%5D&name=image.png&originHeight=472&originWidth=730&originalType=binary&ratio=1&size=293172&status=done&style=none&taskId=u903a578c-e216-4971-a247-726db8b58ed&width=286" style="height:130px;"/><img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625999100367-23e6fde8-07e1-4d2d-952d-58ceb25d6724.png#clientId=ud7a02ddf-68cd-4&from=paste&height=185&id=u71a575ea&margin=%5Bobject%20Object%5D&name=image.png&originHeight=488&originWidth=748&originalType=binary&ratio=1&size=303696&status=done&style=none&taskId=u2ad0e6cf-a330-417c-b94c-b00f2991274&width=283.991455078125" style="height:130px;"/><img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625999101064-8bbe6958-2e6c-47d2-ac83-42a93b7c5da4.png#clientId=ud7a02ddf-68cd-4&from=paste&height=198&id=ua6f9a03f&margin=%5Bobject%20Object%5D&name=image.png&originHeight=476&originWidth=573&originalType=binary&ratio=1&size=228321&status=done&style=none&taskId=ucfe8166d-f5b5-4ca1-86fe-27473a41f4e&width=238.491455078125" style="height:130px;"/>
+<ul>
+<li>更为复杂的平滑着色例子：</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625999312627-776ec0af-a028-456c-896d-b6337168faac.png#clientId=ud7a02ddf-68cd-4&from=paste&height=186&id=u68c9a980&margin=%5Bobject%20Object%5D&name=image.png&originHeight=429&originWidth=661&originalType=binary&ratio=1&size=251640&status=done&style=none&taskId=uaa7fde1f-e28a-43b5-bdb1-6a31baf4add&width=286.4971618652344" style="height:130px;"/> =》 <img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625999313896-c2a5bfb1-16cb-445c-8785-133776583902.png#clientId=ud7a02ddf-68cd-4&from=paste&height=182&id=u023e9c1c&margin=%5Bobject%20Object%5D&name=image.png&originHeight=389&originWidth=638&originalType=binary&ratio=1&size=194089&status=done&style=none&taskId=uc48424dd-9bfc-4ebc-a68f-ea64a3a207a&width=298.9829406738281" style="height:130px;"/><br /><img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625999328880-b1ff74db-d346-4b3b-b37b-dcebc7f7e0e5.png#clientId=ud7a02ddf-68cd-4&from=paste&height=236&id=ubf543ac1&margin=%5Bobject%20Object%5D&name=image.png&originHeight=471&originWidth=478&originalType=binary&ratio=1&size=188186&status=done&style=none&taskId=ub9ec680d-d79b-48f9-9fe4-a2f6cfd0b9d&width=239" style="height:130px;"/> =》<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625999334386-f57789ae-fbfd-433e-bd8c-11afa3f9db10.png#clientId=ud7a02ddf-68cd-4&from=paste&height=227&id=u125ed306&margin=%5Bobject%20Object%5D&name=image.png&originHeight=454&originWidth=494&originalType=binary&ratio=1&size=203338&status=done&style=none&taskId=u0b3272d9-aaf0-4846-98b5-8861c3e1507&width=247" style="height:130px;"/>
+<h3 id="基于角度的平滑着色-Smoothing-Based-On-Angles"><a class="header-anchor" href="#基于角度的平滑着色-Smoothing-Based-On-Angles">¶</a>基于角度的平滑着色 Smoothing Based On Angles</h3>
+<ul>
+<li>一般软件允许我们限定平滑的角度（小于这个角度的会执行“平滑着色”）</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625999524533-d2b18055-d06d-4341-8eec-7fd06d6bf570.png#clientId=ud7a02ddf-68cd-4&from=paste&height=181&id=u039b77ae&margin=%5Bobject%20Object%5D&name=image.png&originHeight=500&originWidth=640&originalType=binary&ratio=1&size=282686&status=done&style=none&taskId=u247861dc-9f25-4428-99b6-4f9b97aebe8&width=232" style="height:130px;"/><img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625999530975-4ee1fc46-1ef3-415f-ab58-e0bd2121cd51.png#clientId=ud7a02ddf-68cd-4&from=paste&height=183&id=ue6ce7da6&margin=%5Bobject%20Object%5D&name=image.png&originHeight=483&originWidth=650&originalType=binary&ratio=1&size=261552&status=done&style=none&taskId=u987bf69b-31d3-451b-b15c-114d5dd3632&width=246" style="height:130px;"/><img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625999533989-4a51888d-09ea-4251-a004-a9f49f171d51.png#clientId=ud7a02ddf-68cd-4&from=paste&height=178&id=ub1685e25&margin=%5Bobject%20Object%5D&name=image.png&originHeight=498&originWidth=657&originalType=binary&ratio=1&size=272343&status=done&style=none&taskId=uc2239118-5e94-4622-bc92-1f38fecd759&width=234.4801025390625" style="height:130px;"/>
+<ul>
+<li>例子：</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625999828713-59db8fce-4ce7-443e-8ed7-1501876862d2.png#clientId=ud7a02ddf-68cd-4&from=paste&height=224&id=u86277668&margin=%5Bobject%20Object%5D&name=image.png&originHeight=448&originWidth=471&originalType=binary&ratio=1&size=144397&status=done&style=none&taskId=u675c99e2-0ed6-478e-a562-1e33fe0dabf&width=235.5" style="height:130px;"/><img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1625999832084-1019bf58-a4ca-41ce-9934-c3c002a19aed.png#clientId=ud7a02ddf-68cd-4&from=paste&height=230&id=u5942e8f0&margin=%5Bobject%20Object%5D&name=image.png&originHeight=491&originWidth=544&originalType=binary&ratio=1&size=212806&status=done&style=none&taskId=uc480f261-8d92-4a2f-b73f-bebb4568d87&width=254.98861694335938" style="height:130px;"/>
+<hr>
+<h1 id="P5-父子层级-Hierarchies"><a class="header-anchor" href="#P5-父子层级-Hierarchies">¶</a>P5 父子层级 Hierarchies</h1>
+<ul>
+<li>位移，旋转，缩放信息可以由父级物体转递到子级物体。子级物体的变换信息则不会影响父级。</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626001125546-a89e6635-2187-4cb1-81a5-9a588b2a8e0e.png#clientId=ud7a02ddf-68cd-4&from=paste&height=227&id=u9448f7de&margin=%5Bobject%20Object%5D&name=image.png&originHeight=454&originWidth=689&originalType=binary&ratio=1&size=319142&status=done&style=none&taskId=u10f5d0c9-b9bd-4d3b-a53d-148be05e626&width=344.5" style="height:130px;"/><img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626001139958-f1d9f042-d18a-4f20-b335-3a60db55fc5b.png#clientId=ud7a02ddf-68cd-4&from=paste&height=226&id=u56d7b2c0&margin=%5Bobject%20Object%5D&name=image.png&originHeight=452&originWidth=684&originalType=binary&ratio=1&size=292808&status=done&style=none&taskId=u3c3b1ff5-58ed-456b-99bf-4eb9e30ba4e&width=342" style="height:130px;"/>
+<ul>
+<li>节点网络node network 和 文件夹父子层级是一样的，只是显示方式不同；节点网络中，箭头由父级指向子级 <img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626001595517-6f0f9d37-75ea-4a7b-b6a1-29a75991e727.png#clientId=ud7a02ddf-68cd-4&from=paste&height=74&id=uf712639c&margin=%5Bobject%20Object%5D&name=image.png&originHeight=147&originWidth=470&originalType=binary&ratio=1&size=43854&status=done&style=none&taskId=uf75a3690-4dd3-4ffa-b77e-cf4244b5016&width=235" style="height:130px;"/></li>
+<li>文件夹层级通常用于继承父级变换信息的层次结构 ，这里就是&quot;位移，旋转，缩放信息&quot;</li>
+<li>节点模式层级，还可以继承其他属性，比如约束条件、方程、颜色等  <img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626001576714-500e14ea-f48a-476e-af7a-353aa8321757.png#clientId=ud7a02ddf-68cd-4&from=paste&height=236&id=uab91af56&margin=%5Bobject%20Object%5D&name=image.png&originHeight=472&originWidth=487&originalType=binary&ratio=1&size=131689&status=done&style=none&taskId=u08810392-2daa-41a6-9fe4-d3e534207f2&width=243.5" style="height:130px;"/></li>
+</ul>
+<h3 id="用空物体来打组"><a class="header-anchor" href="#用空物体来打组">¶</a>用空物体来打组</h3>
+<ul>
+<li>空物体可以是不同形状的，常见 纯轴、立方体……</li>
+<li>把模型所有组成部分放在一个空物体下，就可以通过选择变换空物体，就可以变换所有组成部分</li>
+</ul>
+<hr>
+<h1 id="P6-凹凸和置换贴图"><a class="header-anchor" href="#P6-凹凸和置换贴图">¶</a>P6 凹凸和置换贴图</h1>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">了解置换贴图displacement mapping和凹凸贴图bump是如何工作的</span><br><span class="line">了解它们是如何帮我们在<span class="number">3</span>D建模中节省时间的</span><br></pre></td></tr></table></figure>
+<ul>
+<li>置换贴图可以改变几何信息，但需要足够细分。bump贴图则只改变视觉效果</li>
+<li>置换贴图真实改变物体，而bump凹凸贴图则是给人一种几何体被影响的假象</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626003874660-83dc6bc8-a15e-4d60-aef8-5a9eaafb7059.png#clientId=ud7a02ddf-68cd-4&from=paste&height=229&id=u13638ecd&margin=%5Bobject%20Object%5D&name=image.png&originHeight=457&originWidth=599&originalType=binary&ratio=1&size=320122&status=done&style=none&taskId=ubaeb4fa0-2d1c-41f2-ae5b-986d647c8f5&width=299.5" style="height:130px;"/>
+<ul>
+<li>凹凸贴图：优点是less geometry；缺点则是，近距离看物体就没有这种效果了</li>
+<li>置换贴图：真实改变物体形态，所以我们可以近距离观察物体；缺点就是需要很多geometry</li>
+</ul>
+<h3 id="贴图"><a class="header-anchor" href="#贴图">¶</a>贴图</h3>
+<ul>
+<li>置换贴图和凹凸贴图，都是使用灰度贴图</li>
+<li>贴图中，黑色区域的值为0，表示对物体没有影响；而白色区域值为255，表示对物体有完全的影响；灰色区域的值介于0到255之间。</li>
+<li>物体受影响程度取决于具体数值。意味着<strong>越黑影响越小，越白影响越大</strong></li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626004109281-20abe52e-58c2-46dc-a9ab-dbc60c0d5d2e.png#clientId=ud7a02ddf-68cd-4&from=paste&height=228&id=u0a76cde6&margin=%5Bobject%20Object%5D&name=image.png&originHeight=455&originWidth=677&originalType=binary&ratio=1&size=245902&status=done&style=none&taskId=u0e07a292-86a7-4034-aff4-7597c21230f&width=338.5" style="height:130px;"/>
+<h3 id="节省你的时间"><a class="header-anchor" href="#节省你的时间">¶</a>节省你的时间</h3>
+<ul>
+<li>比如我们要做一个海洋，确实可以用流体模拟功能，但是计算耗时；而直接用置换贴图就可以取得很好的效果</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626004442557-8aed8ff0-a07e-4df1-ae72-199abec2ebae.png#clientId=ud7a02ddf-68cd-4&from=paste&height=174&id=u6423aae7&margin=%5Bobject%20Object%5D&name=image.png&originHeight=347&originWidth=395&originalType=binary&ratio=1&size=162262&status=done&style=none&taskId=u4824889e-f0bb-4a78-8ac5-be685ef95ab&width=197.5" style="height:130px;"/> <img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626004412647-f3fa7580-6dec-408e-80a7-c0d43062a98b.png#clientId=ud7a02ddf-68cd-4&from=paste&height=156&id=u4423adbd&margin=%5Bobject%20Object%5D&name=image.png&originHeight=311&originWidth=703&originalType=binary&ratio=1&size=447404&status=done&style=none&taskId=u53c7e2c0-f250-4865-b3f7-4714cb9bf60&width=351.5" style="height:130px;"/>
+<hr>
+<h1 id="P7-表面细分"><a class="header-anchor" href="#P7-表面细分">¶</a>P7 表面细分</h1>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">表面细分如何工作</span><br><span class="line">为什么表面细分需要配合四边面使用</span><br></pre></td></tr></table></figure>
+<h3 id="何为表面细分"><a class="header-anchor" href="#何为表面细分">¶</a>何为表面细分</h3>
+<ul>
+<li>表面细分：可以将一个低面数的模型平滑成一个高面数的模型；它并不像是“平滑着色”那样，而是真实改变了 模型的几何结构geometry</li>
+<li>我们把低面数的模型成为“控制罩体 Control cage”；表面细分激活后，我们仍然可以编辑控制罩体的网格</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626004889443-8673554d-124b-44dd-8f97-15bad57e9cd3.png#clientId=ud7a02ddf-68cd-4&from=paste&height=231&id=ue627a94e&margin=%5Bobject%20Object%5D&name=image.png&originHeight=462&originWidth=657&originalType=binary&ratio=1&size=372693&status=done&style=none&taskId=uc4599911-0f02-47b7-a604-cdfb837bca5&width=328.5" style="height:130px;"/>
+<h3 id="细分等级"><a class="header-anchor" href="#细分等级">¶</a>细分等级</h3>
+<ul>
+<li>细分会使模型面数增加；每个级别的细分等级都会把面数乘以4倍</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626004982008-0438a944-8f49-4395-a8bb-6d2c1e301643.png#clientId=ud7a02ddf-68cd-4&from=paste&height=157&id=ue4fd7653&margin=%5Bobject%20Object%5D&name=image.png&originHeight=426&originWidth=694&originalType=binary&ratio=1&size=154315&status=done&style=none&taskId=u2e29b147-2031-4f6c-8a32-03d6778f82d&width=255.98861694335938" style="height:130px;"/><img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626004984790-b51d158c-352f-44f8-8944-7ed74e99204f.png#clientId=ud7a02ddf-68cd-4&from=paste&height=156&id=u8b008f83&margin=%5Bobject%20Object%5D&name=image.png&originHeight=417&originWidth=627&originalType=binary&ratio=1&size=148484&status=done&style=none&taskId=ud102a881-7235-41ca-96d4-64ea0b0c7ff&width=234.49429321289062" style="height:130px;"/><img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626004995890-5ecea940-62ed-4896-be0a-567666596ca3.png#clientId=ud7a02ddf-68cd-4&from=paste&height=154&id=u1f60eab6&margin=%5Bobject%20Object%5D&name=image.png&originHeight=421&originWidth=636&originalType=binary&ratio=1&size=198276&status=done&style=none&taskId=ue2951e8b-0be0-441e-ba81-d2f9e6a195a&width=231.99147033691406" style="height:130px;"/>
+<ul>
+<li>三维软件允许我们在预览和渲染时，设置独立级别的细分等级；我们可以在预览时候使用低细分等级的，便于更快速地操作，在渲染时候用高细分等级的</li>
+<li>当细分等级过高时候，肉眼看不出区别，所以不是细分等级越高越好。细分等级越高，模型需要更长时间和系统内存来渲染，比如细分等级4的模型面数是细分等级3的模型的4倍</li>
+<li>较小或较远的模型细分等级，应该比距离镜头较近的模型的细分等级低；最佳的细分等级需要不断调试才知道</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626005346298-ae093373-8051-4c68-9244-750f3bcf7f06.png#clientId=ud7a02ddf-68cd-4&from=paste&height=273&id=u574def7f&margin=%5Bobject%20Object%5D&name=image.png&originHeight=546&originWidth=743&originalType=binary&ratio=1&size=637837&status=done&style=none&taskId=u9c2b2521-e575-406e-83df-cfa258d91fe&width=371.5" style="height:130px;"/>
+<ul>
+<li>可以用表面细分和平滑着色来创建外观非常平滑的模型</li>
+<li><strong>平滑着色不会平滑掉你的模型边缘</strong></li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626005477086-95762e65-ca92-4f35-937e-f2b43d420578.png#clientId=ud7a02ddf-68cd-4&from=paste&height=192&id=u2458b692&margin=%5Bobject%20Object%5D&name=image.png&originHeight=494&originWidth=615&originalType=binary&ratio=1&size=270479&status=done&style=none&taskId=u208ac533-5cec-4903-9177-1ae0ed6e935&width=238.5" style="height:130px;"/> =》 <img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626005482667-ece7fd67-1be8-415d-b23a-852f1ff57dfa.png#clientId=ud7a02ddf-68cd-4&from=paste&height=191&id=u86a7016d&margin=%5Bobject%20Object%5D&name=image.png&originHeight=452&originWidth=691&originalType=binary&ratio=1&size=332637&status=done&style=none&taskId=ub4ac3102-a4f4-4cb4-84a1-40cef9be173&width=292.4971618652344" style="height:130px;"/>
+<ul>
+<li>如果模型轮廓看起来过于棱角，则需要增加细分等级</li>
+</ul>
+<h3 id="表面细分是如何工作的"><a class="header-anchor" href="#表面细分是如何工作的">¶</a>表面细分是如何工作的</h3>
+<ul>
+<li>大多数三维软件使用近似值法而不是插值法来细分网格，所以细分后的网格不会通过与控制罩体相同的顶点位置</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626005814459-10063495-f367-4061-869f-9718ab4afab5.png#clientId=ud7a02ddf-68cd-4&from=paste&height=214&id=ue42c4163&margin=%5Bobject%20Object%5D&name=image.png&originHeight=427&originWidth=631&originalType=binary&ratio=1&size=147272&status=done&style=none&taskId=ueeaa9dd6-0146-4d86-93a8-7fbbb7fa2f1&width=315.5" style="height:130px;"/>
+<ul>
+<li>当需要锐角时，简单的方法就是将顶点考得更近。而如果需要光滑的表面，那就让顶点间的间隔更大些。因为所有顶点对曲线的形状都具有同等的影响。</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626005867624-cc55b697-1c93-4543-a674-f9be8257e66e.png#clientId=ud7a02ddf-68cd-4&from=paste&height=174&id=uc4c0e02d&margin=%5Bobject%20Object%5D&name=image.png&originHeight=417&originWidth=716&originalType=binary&ratio=1&size=180000&status=done&style=none&taskId=u6384d003-fd86-4275-bbd7-0d1eda0b896&width=298.99713134765625" style="height:130px;"/> <img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626005908676-e04a761e-c03d-4a70-9582-dd4110ac80ce.png#clientId=ud7a02ddf-68cd-4&from=paste&height=178&id=u3dd1964f&margin=%5Bobject%20Object%5D&name=image.png&originHeight=457&originWidth=694&originalType=binary&ratio=1&size=190490&status=done&style=none&taskId=u5cd42899-8100-477c-bd35-8240ff99855&width=270.9886169433594" style="height:130px;"/>
+<h3 id="为什么是四边形"><a class="header-anchor" href="#为什么是四边形">¶</a>为什么是四边形</h3>
+<ul>
+<li>做光滑表面最好的方法就是在网格中使用四边面</li>
+<li>由前面的细分成为平滑曲线可以看出，如果我们创建了一个四边形网格，则样条线就会两两彼此穿插（即每个点连接着四个方向的线段），样条线不断从一个顶点走到下一个顶点，这样模型走向就如我们所料地那样生成了</li>
+<li>如果我们有一个连接线段多或者少于4个顶点，样条线就会被阻断，我们的网格就可能无法像预期那样平滑了</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626006352821-626ef81d-0198-4ddb-a6ec-04f1d847a111.png#clientId=ud7a02ddf-68cd-4&from=paste&height=174&id=u2b58d36f&margin=%5Bobject%20Object%5D&name=image.png&originHeight=454&originWidth=655&originalType=binary&ratio=1&size=216935&status=done&style=none&taskId=u384eaff1-fdf5-44bd-9db5-3ca5d03b647&width=251.5" style="height:130px;"/> <img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626006395120-756e68dd-c547-4359-b3f7-fc202563afd3.png#clientId=ud7a02ddf-68cd-4&from=paste&height=171&id=u7a9d12fc&margin=%5Bobject%20Object%5D&name=image.png&originHeight=413&originWidth=877&originalType=binary&ratio=1&size=548468&status=done&style=none&taskId=u64fe0559-16e1-4a4a-98a4-9d4ee9ee826&width=362.4942932128906" style="height:130px;"/>
+<ul>
+<li><strong>这种表面细分导致样条线在模型表面流动的概念将引领我们到拓扑的学习中</strong></li>
+</ul>
+<hr>
+<h1 id="P8-表面细分拓扑-错误（瑕疵）Sub-Division-Topology-Artifacts-【其实也是“布线原理-原则”相关】"><a class="header-anchor" href="#P8-表面细分拓扑-错误（瑕疵）Sub-Division-Topology-Artifacts-【其实也是“布线原理-原则”相关】">¶</a>P8 表面细分拓扑 错误（瑕疵）Sub Division Topology Artifacts 【其实也是“布线原理/原则”相关】</h1>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">介绍拓扑和造成平滑瑕疵的原因</span><br></pre></td></tr></table></figure>
+<h3 id="拓扑中的四边面和细分曲面-Quads-And-Sub-D-Topology"><a class="header-anchor" href="#拓扑中的四边面和细分曲面-Quads-And-Sub-D-Topology">¶</a>拓扑中的四边面和细分曲面 Quads And Sub D Topology</h3>
+<ul>
+<li>三角形和多边形在表面细分时会产生突起。</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626006942376-9676acc5-a980-4931-8d93-db1f58b6fc67.png#clientId=ud7a02ddf-68cd-4&from=paste&height=182&id=u7724aefe&margin=%5Bobject%20Object%5D&name=image.png&originHeight=472&originWidth=614&originalType=binary&ratio=1&size=239599&status=done&style=none&taskId=ube04ac85-7d8a-4284-b8d4-aba88812f19&width=236.9801025390625" style="height:130px;"/> <img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626006842289-f1582d49-2e9a-4753-9d79-e3d69d806fe9.png#clientId=ud7a02ddf-68cd-4&from=paste&height=182&id=u250083f2&margin=%5Bobject%20Object%5D&name=image.png&originHeight=456&originWidth=630&originalType=binary&ratio=1&size=263761&status=done&style=none&taskId=u259d7361-dbed-4a40-b369-b7e46aeb10c&width=250.97726440429688" style="height:130px;"/> <img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626006845919-f1ee6782-fac0-4d64-8779-8f5a3eeb1bc6.png#clientId=ud7a02ddf-68cd-4&from=paste&height=181&id=u3eaedeb7&margin=%5Bobject%20Object%5D&name=image.png&originHeight=465&originWidth=621&originalType=binary&ratio=1&size=226924&status=done&style=none&taskId=u22a5dbc0-1c45-4d98-949b-0c9526f7444&width=241.491455078125" style="height:130px;"/>
+<ul>
+<li>这些错误会随着面角度的减小而减少。所以一个完全平坦的网格也可能会有糟糕的拓扑，但不会看到任何平滑错误</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626006834113-7e8cdeef-43da-4f61-a81a-3621877bb600.png#clientId=ud7a02ddf-68cd-4&from=paste&height=214&id=u146e9fa0&margin=%5Bobject%20Object%5D&name=image.png&originHeight=428&originWidth=589&originalType=binary&ratio=1&size=192480&status=done&style=none&taskId=u7b756765-b4a0-4d8a-94f6-410d3e0c212&width=294.5" style="height:130px;"/>
+<ul>
+<li>有一个方法可以解决平滑错误，就是使用非常密集的网格。虽然密集的网格可以减少平滑错误的面积和强度，但是这不可行，因为密集的网格很难再去进行动画、材质和渲染的操作</li>
+</ul>
+<h3 id="使用四边面时会产生的错误"><a class="header-anchor" href="#使用四边面时会产生的错误">¶</a>使用四边面时会产生的错误</h3>
+<ul>
+<li>造成平滑错误的原因，不止是非四边面。因为我们细分任何网格，它都会变成四边面，但同样的平滑错误会继续出现</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626007239026-f9f427e1-9022-444e-9e81-8ba47befff35.png#clientId=ud7a02ddf-68cd-4&from=paste&height=198&id=u39b11817&margin=%5Bobject%20Object%5D&name=image.png&originHeight=445&originWidth=660&originalType=binary&ratio=1&size=272841&status=done&style=none&taskId=u249c2b51-82d3-4cce-aab6-03923fd7a84&width=294" style="height:130px;"/> <img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626007241507-b78e7f4e-40c3-42b2-abd9-46abc9d46bd1.png#clientId=ud7a02ddf-68cd-4&from=paste&height=199&id=u595541ed&margin=%5Bobject%20Object%5D&name=image.png&originHeight=455&originWidth=663&originalType=binary&ratio=1&size=308057&status=done&style=none&taskId=u34371119-ca50-473f-b636-4ef80cea163&width=290.491455078125" style="height:130px;"/>
+<ul>
+<li>其他平滑错误的原因：
+<ul>
+<li>明显的顶点偏移。造成它们不恰当的凹凸</li>
+</ul>
+</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626007319711-8a809438-9ab0-45b5-8386-6cf209ee421b.png#clientId=ud7a02ddf-68cd-4&from=paste&height=194&id=u72123cc9&margin=%5Bobject%20Object%5D&name=image.png&originHeight=486&originWidth=636&originalType=binary&ratio=1&size=311027&status=done&style=none&taskId=u668ef5d0-9655-46e1-b123-fee32a2e619&width=253.99716186523438" style="height:130px;"/>
+<ul>
+<li>不均匀的拓扑也会产生错误。这里看到不一致的变长在平滑时出现明显错误，突起可以通过内侧加一条边解决问题 ——》内侧边是创建一个整洁的可控制转角的好方法；内侧边的移动可以让转角从尖锐变得圆滑</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626007441564-1c49920c-fe49-43b3-9d4b-58d519cda94c.png#clientId=ud7a02ddf-68cd-4&from=paste&height=200&id=ua54f6e82&margin=%5Bobject%20Object%5D&name=image.png&originHeight=491&originWidth=686&originalType=binary&ratio=1&size=354476&status=done&style=none&taskId=u7b564d54-7e7e-4e53-8df9-7688199fa2c&width=279.9971618652344" style="height:130px;"/>=》<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626007467409-30156c9e-6b97-430d-af6d-9b32781120ad.png#clientId=ud7a02ddf-68cd-4&from=paste&height=204&id=u706ea0c1&margin=%5Bobject%20Object%5D&name=image.png&originHeight=516&originWidth=655&originalType=binary&ratio=1&size=301464&status=done&style=none&taskId=ud0a83e48-35eb-45af-a4fd-37322915df4&width=258.5" style="height:130px;"/>	<br /><img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626007540076-371a2833-2dc9-4937-8539-b23388854a0e.png#clientId=ud7a02ddf-68cd-4&from=paste&height=180&id=u44879233&margin=%5Bobject%20Object%5D&name=image.png&originHeight=421&originWidth=598&originalType=binary&ratio=1&size=115035&status=done&style=none&taskId=ufaa361e7-00fa-4778-aa78-e33f1cb5cf7&width=254.991455078125" style="height:130px;"/>=》<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626007558358-1da0d6a2-4dd2-4568-bc36-806f1a648855.png#clientId=ud7a02ddf-68cd-4&from=paste&height=181&id=u16e8370a&margin=%5Bobject%20Object%5D&name=image.png&originHeight=439&originWidth=592&originalType=binary&ratio=1&size=113943&status=done&style=none&taskId=ub437f971-616a-4a45-b0fe-3abdb5447f8&width=243.99429321289062" style="height:130px;"/><br /><img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626007649053-d9856a07-a2ae-48a5-9008-1256e079631a.png#clientId=ud7a02ddf-68cd-4&from=paste&height=190&id=uf857e58f&margin=%5Bobject%20Object%5D&name=image.png&originHeight=505&originWidth=650&originalType=binary&ratio=1&size=278691&status=done&style=none&taskId=ua0fde4c9-2985-4241-a1a1-b1407d4091e&width=243.98294067382812" style="height:130px;"/> = 》<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626007654279-e919d2bf-00c8-4059-8edc-a0d532fd8cb3.png#clientId=ud7a02ddf-68cd-4&from=paste&height=180&id=u824dc2df&margin=%5Bobject%20Object%5D&name=image.png&originHeight=465&originWidth=677&originalType=binary&ratio=1&size=303164&status=done&style=none&taskId=u268f065f-4eff-448e-866c-0f8832f90e0&width=262.4801025390625" style="height:130px;"/>
+<h3 id="极点-Poles"><a class="header-anchor" href="#极点-Poles">¶</a>极点 Poles</h3>
+<ul>
+<li>极点就是连接着许多条边的顶点。</li>
+<li>有时候极点不可避免。但是请记住，<strong>组成极点的线段越多，平滑错误越明显。所以尽量减少极点。可以的话，把极点放在平坦或者不明显的地方</strong></li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626007838515-efc38c71-cd9f-4367-8d46-5214c1f92517.png#clientId=ud7a02ddf-68cd-4&from=paste&height=191&id=uf94d9930&margin=%5Bobject%20Object%5D&name=image.png&originHeight=460&originWidth=628&originalType=binary&ratio=1&size=282501&status=done&style=none&taskId=ue6b6914c-4f84-40a4-9f13-c588ea6bd88&width=260.991455078125" style="height:130px;"/>
+<h3 id="消除非四边面"><a class="header-anchor" href="#消除非四边面">¶</a>消除非四边面</h3>
+<ul>
+<li>偶数边：直接连接顶点成四边形。</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626008214569-f7e933c6-639d-464f-b09b-d4df91946273.png#clientId=ud7a02ddf-68cd-4&from=paste&height=157&id=u13a717e7&margin=%5Bobject%20Object%5D&name=image.png&originHeight=419&originWidth=461&originalType=binary&ratio=1&size=137676&status=done&style=none&taskId=u328f34d4-fc6e-4efe-bd7d-d9dd2a96c01&width=172.4971466064453" style="height:130px;"/> =》<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626008219866-accb2894-85d5-4059-821c-7a0e35b32788.png#clientId=ud7a02ddf-68cd-4&from=paste&height=157&id=uf10846de&margin=%5Bobject%20Object%5D&name=image.png&originHeight=425&originWidth=436&originalType=binary&ratio=1&size=151993&status=done&style=none&taskId=ud7a84413-db8b-44bf-a7c0-ff868acfda8&width=160.9971466064453" style="height:130px;"/><img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626008223659-12e7e5e2-b885-412d-981f-01ac8ece695f.png#clientId=ud7a02ddf-68cd-4&from=paste&height=157&id=u990b9e0c&margin=%5Bobject%20Object%5D&name=image.png&originHeight=407&originWidth=447&originalType=binary&ratio=1&size=152183&status=done&style=none&taskId=u5d7d5cf0-36ca-47ec-9f99-69dcab221ee&width=172.4943084716797" style="height:130px;"/><img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626008224834-76a36842-f151-4a1a-9bca-f8dd77b2652f.png#clientId=ud7a02ddf-68cd-4&from=paste&height=161&id=uf66e7c95&margin=%5Bobject%20Object%5D&name=image.png&originHeight=404&originWidth=444&originalType=binary&ratio=1&size=132049&status=done&style=none&taskId=uf2d4b0a5-8a6a-4a79-ac98-2555b03570f&width=176.98863220214844" style="height:130px;"/><img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626008226725-17baf926-1d6b-49df-a6d0-1750529ca8f3.png#clientId=ud7a02ddf-68cd-4&from=paste&height=175&id=u1c36afd0&margin=%5Bobject%20Object%5D&name=image.png&originHeight=414&originWidth=441&originalType=binary&ratio=1&size=146014&status=done&style=none&taskId=u02485b5d-be88-4ecf-a0ba-a3c61e017c1&width=186.4971466064453" style="height:130px;"/>
+<ul>
+<li>奇数边：从数学上来讲，要在不生成新的非四边形的情况下去掉非四边形是不可能的。可以通过增加边或者减少边，使两个奇数边的非四边形相互抵消，
+<ul>
+<li>增加边，连接两个三角形顶点</li>
+</ul>
+</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626008595656-d032cf50-0398-42fc-a603-49b226810745.png#clientId=ud7a02ddf-68cd-4&from=paste&height=157&id=u37833882&margin=%5Bobject%20Object%5D&name=image.png&originHeight=440&originWidth=609&originalType=binary&ratio=1&size=197045&status=done&style=none&taskId=ub4fdad89-9ad4-4a23-94e5-b0b167b2acf&width=217.48861694335938" style="height:130px;"/> =》 <img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626008720840-81cece77-5e68-42a7-8735-e78be7eac6ff.png#clientId=ud7a02ddf-68cd-4&from=paste&height=155&id=u850fc20b&margin=%5Bobject%20Object%5D&name=image.png&originHeight=479&originWidth=621&originalType=binary&ratio=1&size=203758&status=done&style=none&taskId=u8710fd50-ef0a-4ba8-a54d-1bceac6fd69&width=201.48863220214844" style="height:130px;"/><img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626008732038-ffd5e8f1-50e8-4348-a940-c06edbb25783.png#clientId=ud7a02ddf-68cd-4&from=paste&height=173&id=uf4a2a168&margin=%5Bobject%20Object%5D&name=image.png&originHeight=470&originWidth=610&originalType=binary&ratio=1&size=196044&status=done&style=none&taskId=ue720cf3b-9344-4eb5-812b-8ac8caa4e7c&width=225" style="height:130px;"/>
+<ul>
+<li>减少边</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626008775563-7898ccb8-3d7d-43f1-a0ad-037a1942ad6f.png#clientId=ud7a02ddf-68cd-4&from=paste&height=187&id=u8b6955d0&margin=%5Bobject%20Object%5D&name=image.png&originHeight=374&originWidth=658&originalType=binary&ratio=1&size=190695&status=done&style=none&taskId=ue61e2e6f-bb9f-412d-b42a-e42fe684202&width=329" style="height:130px;"/> =》 <img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626008784737-f0946a15-bb69-4ba5-98d7-97d86c7c15db.png#clientId=ud7a02ddf-68cd-4&from=paste&height=188&id=ud75a1fe9&margin=%5Bobject%20Object%5D&name=image.png&originHeight=409&originWidth=651&originalType=binary&ratio=1&size=191763&status=done&style=none&taskId=ua36ca005-5be2-4077-a20f-a0a2d1caad5&width=299.4971618652344" style="height:130px;"/>
+<ul>
+<li>偏移边的一端</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626008775563-7898ccb8-3d7d-43f1-a0ad-037a1942ad6f.png#clientId=ud7a02ddf-68cd-4&from=paste&height=141&id=ARdh5&margin=%5Bobject%20Object%5D&name=image.png&originHeight=374&originWidth=658&originalType=binary&ratio=1&size=190695&status=done&style=none&taskId=ue61e2e6f-bb9f-412d-b42a-e42fe684202&width=247.98577880859375" style="height:130px;"/>=》<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626008820312-ce008c3e-cbde-4599-8562-66ad09612b3a.png#clientId=ud7a02ddf-68cd-4&from=paste&height=148&id=ubcd02278&margin=%5Bobject%20Object%5D&name=image.png&originHeight=430&originWidth=651&originalType=binary&ratio=1&size=223097&status=done&style=none&taskId=u6c5b6c18-093c-4e23-99ff-5abc1392932&width=224.4801025390625" style="height:130px;"/> <img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626008836993-93b7dd45-ee33-49a9-b535-958ac42cb2ea.png#clientId=ud7a02ddf-68cd-4&from=paste&height=148&id=u3d123269&margin=%5Bobject%20Object%5D&name=image.png&originHeight=421&originWidth=649&originalType=binary&ratio=1&size=211015&status=done&style=none&taskId=u98ef1881-c92c-4118-9284-05a494e8cfe&width=227.47726440429688" style="height:130px;"/>
+<ul>
+<li>也可以在边上增加或者减少一组循环边的做法</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626009017338-03d5bab3-7364-4132-b684-6b2f40037899.png#clientId=ud7a02ddf-68cd-4&from=paste&height=169&id=u4aee6321&margin=%5Bobject%20Object%5D&name=image.png&originHeight=405&originWidth=437&originalType=binary&ratio=1&size=124422&status=done&style=none&taskId=u0494be8b-7605-4803-96aa-114a0862982&width=182.4943084716797" style="height:130px;"/> =》<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626009041816-9650f63a-d8ee-4732-94d7-477a82bff35d.png#clientId=ud7a02ddf-68cd-4&from=paste&height=178&id=uddc2432a&margin=%5Bobject%20Object%5D&name=image.png&originHeight=405&originWidth=433&originalType=binary&ratio=1&size=116124&status=done&style=none&taskId=u35cc78e8-1bb4-4b64-ad6f-46fdee4a33b&width=190.49147033691406" style="height:130px;"/>  **或者**  <img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626009063242-a94a6d72-2b17-494f-a96a-3ed1ab77b0a0.png#clientId=ud7a02ddf-68cd-4&from=paste&height=183&id=ua400e050&margin=%5Bobject%20Object%5D&name=image.png&originHeight=400&originWidth=441&originalType=binary&ratio=1&size=128480&status=done&style=none&taskId=u6baf1765-0d52-45a1-a94a-54e54c91c64&width=201.4971466064453" style="height:130px;"/>
+<h3 id="减少不必要的拓扑"><a class="header-anchor" href="#减少不必要的拓扑">¶</a>减少不必要的拓扑</h3>
+<ul>
+<li>模型上的密集和疏散部分可能很难结合起来，比如密集的手指部分和疏散的手腕部分。比如人们可能发现自己在诸如腕部之类部分上使用了太多边。</li>
+<li>一个好的方法是，让边flow back to where they came from（让边哪里来哪里去）</li>
+</ul>
+<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626009433063-45af91a8-250a-4cd6-8707-2ecafb65b755.png#clientId=ud7a02ddf-68cd-4&from=paste&height=240&id=u1e76c81a&margin=%5Bobject%20Object%5D&name=image.png&originHeight=518&originWidth=463&originalType=binary&ratio=1&size=330524&status=done&style=none&taskId=u2af201eb-6aff-4d2b-b879-7da51e58236&width=214.49147033691406" style="height:130px;"/> =》<img no-lazy class="inline" src="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626009436408-b09dbf88-0f90-4a99-866f-55150ce8a096.png#clientId=ud7a02ddf-68cd-4&from=paste&height=237&id=ue7547be6&margin=%5Bobject%20Object%5D&name=image.png&originHeight=505&originWidth=548&originalType=binary&ratio=1&size=326806&status=done&style=none&taskId=u9f6b0011-40fa-4db6-b27b-53f07f83b56&width=256.991455078125" style="height:130px;"/>
+<h3 id="总结"><a class="header-anchor" href="#总结">¶</a>总结</h3>
+<ul>
+<li>不良的拓扑结构，可能给动画绑定UV带来问题</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">YD•N次元药师</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://ydtrinley.github.io/posts/CGI%EF%BC%88Computer-generated%20imagery%EF%BC%89note/">http://ydtrinley.github.io/posts/CGI%EF%BC%88Computer-generated%20imagery%EF%BC%89note/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://YDTRINLEY.github.io" target="_blank">幻世·游戏人间·N次元</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%F0%9F%8E%84Blender/">🎄Blender</a><a class="post-meta__tags" href="/tags/Blender%E5%9F%BA%E7%A1%80%E5%8E%9F%E7%90%86/">Blender基础原理</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.nlark.com/yuque/0/2021/png/12518217/1626011597788-008de6c7-ee49-4b29-b272-fac014da8dff.png?x-oss-process=image%2Fresize%2Cw_435" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/vrResourses/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/ydtrinley-assets@1.0.5/img/daizhenzhuerhuandeshaonv.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">【更新中】VR漫游名胜古迹虚拟博物馆 &amp; 3D藏品 （VR Tour &amp; 3D Collections）</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/BlenderShaderNode/" title="【更新中】Blender着色器节点原理-学习笔记"><img class="cover" src="https://cdn.jsdelivr.net/gh/YDTRINLEY/AssetsRepo@master/assets-img/Blender1.7a1nl9ybwvg0.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-01</div><div class="title">【更新中】Blender着色器节点原理-学习笔记</div></div></a></div><div><a href="/posts/machin3tools/" title="Machin3tools使用笔记【Blender插件】"><img class="cover" src="https://cdn.jsdelivr.net/gh/YDTRINLEY/YDTRINLEY.github.io/img/machin3tools.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-29</div><div class="title">Machin3tools使用笔记【Blender插件】</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Disqusjs</span><span class="switch-btn"></span><span class="second-comment">Gitalk</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#P1-%E5%87%A0%E4%BD%95%E4%BD%93%E5%B1%9E%E6%80%A7-%E5%A4%9A%E8%BE%B9%E5%BD%A2%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.</span> <span class="toc-text">P1 几何体属性&#x2F;多边形是什么</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#P2-%E5%A4%A7%E4%BA%8E3%E6%9D%A1%E8%BE%B9%E7%9A%84%E5%A4%9A%E8%BE%B9%E5%BD%A2-Multi-Sided-and-Intersecting-Polygons"><span class="toc-number">2.</span> <span class="toc-text">P2 大于3条边的多边形 Multi Sided and Intersecting Polygons</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Why-use-quads%EF%BC%9F"><span class="toc-number">2.0.1.</span> <span class="toc-text">Why use quads？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Computer-Games-and-Triangles"><span class="toc-number">2.0.2.</span> <span class="toc-text">Computer Games and Triangles</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Intersecting-Polygons-%E7%9B%B8%E4%BA%A4%E5%A4%9A%E8%BE%B9%E5%BD%A2"><span class="toc-number">2.0.3.</span> <span class="toc-text">Intersecting Polygons 相交多边形</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#P3-%E7%89%A9%E4%BD%93-Object"><span class="toc-number">3.</span> <span class="toc-text">P3 物体 Object</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Objects-can-be-any-combination-of-polygons"><span class="toc-number">3.0.1.</span> <span class="toc-text">Objects can be any combination of polygons</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Many-objects-can-form-an-object-or-model"><span class="toc-number">3.0.2.</span> <span class="toc-text">Many objects can form an object or model</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#P4-%E5%B9%B3%E6%BB%91%E7%9D%80%E8%89%B2Smooth-Shading"><span class="toc-number">4.</span> <span class="toc-text">P4 平滑着色Smooth Shading</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Smooth-And-Hard-Edges"><span class="toc-number">4.0.1.</span> <span class="toc-text">Smooth And Hard Edges</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B6%E7%82%B9%E6%B3%95%E7%BA%BF-Vertex-Normals"><span class="toc-number">4.0.2.</span> <span class="toc-text">顶点法线 Vertex Normals</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E8%A7%92%E5%BA%A6%E7%9A%84%E5%B9%B3%E6%BB%91%E7%9D%80%E8%89%B2-Smoothing-Based-On-Angles"><span class="toc-number">4.0.3.</span> <span class="toc-text">基于角度的平滑着色 Smoothing Based On Angles</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#P5-%E7%88%B6%E5%AD%90%E5%B1%82%E7%BA%A7-Hierarchies"><span class="toc-number">5.</span> <span class="toc-text">P5 父子层级 Hierarchies</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E7%A9%BA%E7%89%A9%E4%BD%93%E6%9D%A5%E6%89%93%E7%BB%84"><span class="toc-number">5.0.1.</span> <span class="toc-text">用空物体来打组</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#P6-%E5%87%B9%E5%87%B8%E5%92%8C%E7%BD%AE%E6%8D%A2%E8%B4%B4%E5%9B%BE"><span class="toc-number">6.</span> <span class="toc-text">P6 凹凸和置换贴图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%B4%E5%9B%BE"><span class="toc-number">6.0.1.</span> <span class="toc-text">贴图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8A%82%E7%9C%81%E4%BD%A0%E7%9A%84%E6%97%B6%E9%97%B4"><span class="toc-number">6.0.2.</span> <span class="toc-text">节省你的时间</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#P7-%E8%A1%A8%E9%9D%A2%E7%BB%86%E5%88%86"><span class="toc-number">7.</span> <span class="toc-text">P7 表面细分</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%95%E4%B8%BA%E8%A1%A8%E9%9D%A2%E7%BB%86%E5%88%86"><span class="toc-number">7.0.1.</span> <span class="toc-text">何为表面细分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%86%E5%88%86%E7%AD%89%E7%BA%A7"><span class="toc-number">7.0.2.</span> <span class="toc-text">细分等级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E9%9D%A2%E7%BB%86%E5%88%86%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84"><span class="toc-number">7.0.3.</span> <span class="toc-text">表面细分是如何工作的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E5%9B%9B%E8%BE%B9%E5%BD%A2"><span class="toc-number">7.0.4.</span> <span class="toc-text">为什么是四边形</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#P8-%E8%A1%A8%E9%9D%A2%E7%BB%86%E5%88%86%E6%8B%93%E6%89%91-%E9%94%99%E8%AF%AF%EF%BC%88%E7%91%95%E7%96%B5%EF%BC%89Sub-Division-Topology-Artifacts-%E3%80%90%E5%85%B6%E5%AE%9E%E4%B9%9F%E6%98%AF%E2%80%9C%E5%B8%83%E7%BA%BF%E5%8E%9F%E7%90%86-%E5%8E%9F%E5%88%99%E2%80%9D%E7%9B%B8%E5%85%B3%E3%80%91"><span class="toc-number">8.</span> <span class="toc-text">P8 表面细分拓扑 错误（瑕疵）Sub Division Topology Artifacts 【其实也是“布线原理&#x2F;原则”相关】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E6%89%91%E4%B8%AD%E7%9A%84%E5%9B%9B%E8%BE%B9%E9%9D%A2%E5%92%8C%E7%BB%86%E5%88%86%E6%9B%B2%E9%9D%A2-Quads-And-Sub-D-Topology"><span class="toc-number">8.0.1.</span> <span class="toc-text">拓扑中的四边面和细分曲面 Quads And Sub D Topology</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%9B%9B%E8%BE%B9%E9%9D%A2%E6%97%B6%E4%BC%9A%E4%BA%A7%E7%94%9F%E7%9A%84%E9%94%99%E8%AF%AF"><span class="toc-number">8.0.2.</span> <span class="toc-text">使用四边面时会产生的错误</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%81%E7%82%B9-Poles"><span class="toc-number">8.0.3.</span> <span class="toc-text">极点 Poles</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E9%99%A4%E9%9D%9E%E5%9B%9B%E8%BE%B9%E9%9D%A2"><span class="toc-number">8.0.4.</span> <span class="toc-text">消除非四边面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%8F%E5%B0%91%E4%B8%8D%E5%BF%85%E8%A6%81%E7%9A%84%E6%8B%93%E6%89%91"><span class="toc-number">8.0.5.</span> <span class="toc-text">减少不必要的拓扑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">8.0.6.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 By YD•N次元药师</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">本站由<a><img src="https://cdn.jsdelivr.net/gh/YDTRINLEY/AssetsRepo@master/assets-img/youpaoyunlogo0.525is6gefto0.png" alt="" width="" height=""></a><a target="_blank" rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral">提供CDN加速/云储存服务</a> <br/>~ Day Day Study Day Day Up ~ (≧∇≦)↗<br/><p><a style="margin-inline:5px" target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为Hexo v5.4.0"></a><a style="margin-inline:5px" target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用butterfly v3.7.7"></a><a style="margin-inline:5px" target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由Gtihub托管"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      true && mermaid.init()
+    })
+  }
+}</script><script>function loadDisqusjs () {
+  function addDisqusjsCSS () {
+    const ele = document.createElement('link')
+    ele.rel = 'stylesheet'
+    ele.href= 'https://cdn.jsdelivr.net/npm/disqusjs@1/dist/disqusjs.css'
+    document.getElementsByTagName('head')[0].appendChild(ele)
+  }
+
+  function initDisqusjs () {
+    window.DISQUS = null
+    new DisqusJS({
+      shortname: 'nci-yuan',
+      siteName: 'N次元空间站通讯台',
+      identifier: 'posts/CGI（Computer-generated imagery）note/',
+      url: 'http://ydtrinley.github.io/posts/CGI%EF%BC%88Computer-generated%20imagery%EF%BC%89note/',
+      title: '【Blender】CGI（Computer-generated imagery）基础原理、拓扑布线原理-学习笔记',
+      api: 'https://disqus-js-fangxiang-api-8qes6e5m2-ydtrinley.vercel.app',
+      apikey: 'eT1K6xXuxZfZ7yAW0btcsPklu3yMh3DnYEKQ1mJkyqV7CKSwF5ZwY9TPDdxq1jki',
+      nocomment: '',
+      admin: 'trinleyyd',
+      adminLabel: 'N次元站长'
+    });
+  }
+
+  window.disqusReset = initDisqusjs
+
+  if (window.disqusJsLoad) initDisqusjs()
+  else {
+    addDisqusjsCSS()
+    getScript('https://cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js').then(initDisqusjs)
+    window.disqusJsLoad = true
+  }
+}
+
+if ('Disqusjs' === 'Disqusjs' || !true) {
+  if (true) btf.loadComment(document.getElementById('disqus_thread'), loadDisqusjs)
+  else loadDisqusjs()
+}
+else {
+  function loadOtherComment () {
+    loadDisqusjs()
+  }
+}
+
+</script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: 'faa3e2efe34deb023226',
+      clientSecret: '9c13a5eb4a8ee26cd63da507cac0c564b05e797b',
+      repo: 'YDTRINLEY.github.io',
+      owner: 'YDTRINLEY',
+      admin: ['YDTRINLEY'],
+      id: 'b8ebff3b9b5aa0790e3d68237a9f910d',
+      language: 'zh-CN',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Disqusjs' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script async src="//at.alicdn.com/t/font_2553052_3p67dngjwtx.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><div id="aplayer"></div><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script type="text/javascript"> document.write("<script src='/js/music.js?"+Math.random()+"'><\/script>"); </script>·<script data-pjax defer src="https://cdn.jsdelivr.net/gh/YDTRINLEY/YDTRINLEY.github.io/js/custom.js"></script><script defer src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/hexo-theme-volantis@latest/source/js/issues.min.js"></script><script defer src="https://rmt.dogedoge.com/fetch/~/source/jsdelivr/npm/jquery@latest/dist/jquery.min.js"></script><script defer src="https://iiiii.cf/js/jquery.ripples.js"></script><script defer src="https://iiiii.cf/js/ripples.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"]):not([href="/bb/"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener toc scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="http://YDTRINLEY.github.io/categories/🍱是超好吃的素食啊/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">🍱 是超好吃的素食啊 (1)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="http://YDTRINLEY.github.io/categories/🎄Blender/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">🎄 3D建模的那些事 (3)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="http://YDTRINLEY.github.io/categories/📚文学/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">📚 书海游记 (1)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="http://YDTRINLEY.github.io/categories/✨艺术/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">✨ 人类文明的璀璨星河·ART (1)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="http://YDTRINLEY.github.io/categories/🔔佛学/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">🔔 听那梵音~ (1)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="http://YDTRINLEY.github.io/categories/😀Hexo/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">😀 小白编程相关 (2)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><a class="magnet_link_more"  href="http://YDTRINLEY.github.io/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    console.log('已挂载magnet')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #f2f2f2;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: #ec7d28}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:white}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
+    <style></style><!-- hexo injector body_end end --></body></html>
