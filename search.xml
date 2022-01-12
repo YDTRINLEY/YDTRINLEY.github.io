@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>ATOM-七牛云图床配置</title>
+      <link href="posts/atom-qiniup/"/>
+      <url>posts/atom-qiniup/</url>
+      
+        <content type="html"><![CDATA[<p>之前一直偷懒觉得不需要七牛云啊，配置好麻烦，最后还是当下github1G的限制，以及smms图片不好整理，最后选择了七牛云。文章只是简要记录ATOM插件<code>markdown-img-paste</code>的七牛云配置方式。</p><h1 id="七牛云"><a class="header-anchor" href="#七牛云">¶</a>七牛云</h1><h2 id="创建七牛云空间-到-申请域名备案部分"><a class="header-anchor" href="#创建七牛云空间-到-申请域名备案部分">¶</a>创建七牛云空间 到 申请域名备案部分</h2><p>这一部分内容都可以看文章<a href="https://juejin.cn/post/7013596920182472711" rel="external nofollow noreferrer">Hexo -9- 添加七牛云图床</a> （打不开见备份剪藏）</p><ul><li>PS1：主要是这里我用了<code>yd-cfcz.art</code>的二级域名申请了SSL证书，因为七牛云本身就可以免费给SSL证书，所以直接在七牛云购买了😁</li><li>PS2：没有备案的域名，只能用海外北美的存储空间和流量</li><li><em><strong>第一次知道原来二级域名可以这样用哇~后面再学习😍😍</strong></em></li></ul><h2 id="ATOM-markdown-img-paste-配置"><a class="header-anchor" href="#ATOM-markdown-img-paste-配置">¶</a>ATOM-markdown-img-paste 配置</h2><ul><li><img alt="" src="https://img.yd-cfcz.art/markdown-img-paste-20220112213925707.png" width="300" height="" ></li><li>AccessKey（AK）和SecretKey (SK) 可以在七牛云官网找到，登陆后点击自己的头像，选择密钥管理</li><li>Bucket存储空间名就是刚刚创建的存储对象空间名</li><li>Domain就是上面申请SSL证书并绑定在空间的域名</li><li>Uphost一般不用改。有时候会显示出错，这时候去随笔一篇笔记里面试试上传图片功能，如果配置错误，ATOM右上角会提示需要改成什么对应的服务器域名，直接照抄就好了。（这里北美存储空间服务器对应 <a href="https://up-na0.qiniup.com" rel="external nofollow noreferrer">https://up-na0.qiniup.com</a>）</li></ul><h1 id="后记"><a class="header-anchor" href="#后记">¶</a>后记</h1><p>这样感觉还是有点折腾，其实本来以为ATOM-markdown-img-paste这个插件是可以本地备份同时上传服务器的，可是现在看来并不是。<br>还有据说七牛云的https的域名是没有10G免费的，后续再看计费如何，有必要再换吧……<br>这两天一直在折腾各种笔记软件平台，（把笔记从语雀迁移出来简直头秃），可最后还是回到了github，自己的博客还有原始的ATOM……毕竟原始的markdown格式，不会受捆绑在任何软件上，更不用担心各种软件平台开始封闭自己的圈子开发新的格式，导出和维护成本大大增加……有时候一个操作不当，可能就复制粘贴转移文件夹的误操作就把笔记整没了，今天就看到反馈去一个活生生的例子了诶😂😂😂<br>以后想想不如开两个平台也好，一个自留地可以不国内网络备案可以自嗨，一个国内备案主要作为知识库作为知识分享，这也许是个不错的选择(●ˇ∀ˇ●)</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 😀Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 😀Hexo </tag>
+            
+            <tag> 🦋Butterfly </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>R.I.P. 浅墨大佬</title>
       <link href="posts/R.I.P.%20MXY/"/>
       <url>posts/R.I.P.%20MXY/</url>

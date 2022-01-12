@@ -6,7 +6,7 @@
   <link href="http://ydtrinley.github.io/atom.xml" rel="self"/>
   
   <link href="http://ydtrinley.github.io/"/>
-  <updated>2021-12-14T10:33:26.845Z</updated>
+  <updated>2021-01-12T15:55:55.000Z</updated>
   <id>http://ydtrinley.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>ATOM-七牛云图床配置</title>
+    <link href="http://ydtrinley.github.io/posts/atom-qiniup/"/>
+    <id>http://ydtrinley.github.io/posts/atom-qiniup/</id>
+    <published>2022-01-12T15:55:44.000Z</published>
+    <updated>2021-01-12T15:55:55.000Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;之前一直偷懒觉得不需要七牛云啊，配置好麻烦，最后还是当下github1G的限制，以及smms图片不好整理，最后选择了七牛云。文章只是简要记录ATOM插件&lt;code&gt;markdown-img-paste&lt;/code&gt;的七牛云配置方式。&lt;/p&gt;
+&lt;h1 id=&quot;七牛云&quot;&gt;&lt;a </summary>
+      
+    
+    
+    
+    <category term="😀Hexo" scheme="http://ydtrinley.github.io/categories/%F0%9F%98%80Hexo/"/>
+    
+    
+    <category term="😀Hexo" scheme="http://ydtrinley.github.io/tags/%F0%9F%98%80Hexo/"/>
+    
+    <category term="🦋Butterfly" scheme="http://ydtrinley.github.io/tags/%F0%9F%A6%8BButterfly/"/>
+    
+  </entry>
+  
+  <entry>
     <title>R.I.P. 浅墨大佬</title>
     <link href="http://ydtrinley.github.io/posts/R.I.P.%20MXY/"/>
     <id>http://ydtrinley.github.io/posts/R.I.P.%20MXY/</id>
     <published>2021-12-14T15:55:44.000Z</published>
-    <updated>2021-12-14T10:33:26.845Z</updated>
+    <updated>2022-01-12T18:12:18.759Z</updated>
     
     
       
@@ -46,7 +71,7 @@
     <link href="http://ydtrinley.github.io/posts/vrResourses/"/>
     <id>http://ydtrinley.github.io/posts/vrResourses/</id>
     <published>2021-12-14T15:55:44.000Z</published>
-    <updated>2021-12-14T10:33:26.849Z</updated>
+    <updated>2022-01-12T18:12:18.759Z</updated>
     
     
       
@@ -92,7 +117,7 @@
     <link href="http://ydtrinley.github.io/posts/natto1/"/>
     <id>http://ydtrinley.github.io/posts/natto1/</id>
     <published>2021-06-24T10:53:45.000Z</published>
-    <updated>2021-12-14T10:33:26.849Z</updated>
+    <updated>2022-01-12T18:12:18.759Z</updated>
     
     
     <summary type="html">纳豆的制作注意事项</summary>

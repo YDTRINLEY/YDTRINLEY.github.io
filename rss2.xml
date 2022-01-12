@@ -15,8 +15,35 @@
     <atom:link href="http://ydtrinley.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>o(*￣▽￣*)ブ  Drawing, Reading, Thinking, Playing</description>
-    <pubDate>Tue, 14 Dec 2021 10:33:26 GMT</pubDate>
+    <pubDate>Tue, 12 Jan 2021 15:55:55 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>ATOM-七牛云图床配置</title>
+      <link>http://ydtrinley.github.io/posts/atom-qiniup/</link>
+      <guid>http://ydtrinley.github.io/posts/atom-qiniup/</guid>
+      <pubDate>Wed, 12 Jan 2022 15:55:44 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;之前一直偷懒觉得不需要七牛云啊，配置好麻烦，最后还是当下github1G的限制，以及smms图片不好整理，最后选择了七牛云。文章只是简要记录ATOM插件&lt;code&gt;markdown-img-paste&lt;/code&gt;的七牛云配置方式。&lt;/p&gt;
+&lt;h1 id=&quot;七牛云&quot;&gt;&lt;a </description>
+        
+      
+      
+      
+      
+      <category domain="http://YDTRINLEY.github.io/categories/%F0%9F%98%80Hexo/">😀Hexo</category>
+      
+      
+      <category domain="http://YDTRINLEY.github.io/tags/%F0%9F%98%80Hexo/">😀Hexo</category>
+      
+      <category domain="http://YDTRINLEY.github.io/tags/%F0%9F%A6%8BButterfly/">🦋Butterfly</category>
+      
+      
+      <comments>http://ydtrinley.github.io/posts/atom-qiniup/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>R.I.P. 浅墨大佬</title>
