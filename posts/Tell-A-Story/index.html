@@ -544,14 +544,14 @@ window.addEventListener('load',preloader.endLoading())</script><div class="js-pj
   const init = () => {
     twikoo.init(Object.assign({
       el: '#twikoo-wrap',
-      envId: 'https://twikoo-wine-tau.vercel.app/',
+      envId: 'https://twikoo1-l7syf4zti-ydtrinley.vercel.app/',
       region: 'ap-guangzhou'
     }, {"pageSize":10,"requiredFields":"mail","placeholder":null,"langMode":{"admin":"N次元站长员","nick":"昵称(选填)","mail":"邮箱(必填)","link":"网址(选填)","sofa":"🐾❤💖N次元空间站欢迎您[]~(￣▽￣)~*"}}))
   }
 
   const getCount = () => {
     twikoo.getCommentsCount({
-      envId: 'https://twikoo-wine-tau.vercel.app/',
+      envId: 'https://twikoo1-l7syf4zti-ydtrinley.vercel.app/',
       region: 'ap-guangzhou',
       urls: [window.location.pathname],
       includeReply: false
@@ -567,7 +567,7 @@ window.addEventListener('load',preloader.endLoading())</script><div class="js-pj
       init()
       bool && $countDom && setTimeout(getCount,0)
     } else {
-      getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(()=> {
+      getScript('https://cdn.jsdelivr.net/npm/twikoo@1.4.15/dist/twikoo.all.min.js').then(()=> {
         init()
         bool && $countDom && setTimeout(getCount,0)
       })
@@ -648,7 +648,7 @@ if ('Twikoo' === 'Gitalk' || !true) {
   const getComment = () => {
     const runTwikoo = () => {
       twikoo.getRecentComments({
-        envId: 'https://twikoo-wine-tau.vercel.app/',
+        envId: 'https://twikoo1-l7syf4zti-ydtrinley.vercel.app/',
         region: 'ap-guangzhou',
         pageSize: 6,
         includeReply: true
@@ -674,7 +674,7 @@ if ('Twikoo' === 'Gitalk' || !true) {
     if (typeof twikoo === 'object') {
       runTwikoo()
     } else {
-      getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runTwikoo)
+      getScript('https://cdn.jsdelivr.net/npm/twikoo@1.4.15/dist/twikoo.all.min.js').then(runTwikoo)
     }
   }
 
